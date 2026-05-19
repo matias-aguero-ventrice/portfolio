@@ -4,7 +4,7 @@ import { Calendar } from "lucide-react";
 
 /* Botón para agendar una llamada.
    Registrate en cal.com (gratis) y reemplazá la URL con tu link. */
-const CAL_URL = "https://cal.com/matias-aguero/30min";
+const CAL_URL = "https://cal.com/matias-valentin-aguero-ventrice-9qhrev";
 
 export function CalendlyButton() {
   return (

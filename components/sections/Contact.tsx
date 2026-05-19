@@ -6,6 +6,7 @@ import { Mail, MessageCircle, Linkedin, Check, Copy } from "lucide-react";
 import { WhatsAppQR } from "@/components/QRCode";
 import { VCardButton } from "@/components/VCardButton";
 import { ContactForm } from "@/components/ContactForm";
+import { CalendlyButton } from "@/components/CalendlyButton";
 import { useI18n } from "@/lib/i18n";
 import { personalInfo } from "@/lib/data";
 
@@ -120,8 +121,9 @@ export function Contact() {
                 <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
                   {t.contact.scanQr}
                 </p>
-                <div className="mt-3">
+                <div className="mt-3 flex flex-wrap gap-2">
                   <VCardButton />
+                  <CalendlyButton />
                 </div>
               </div>
             </div>
