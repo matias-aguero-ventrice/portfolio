@@ -20,7 +20,7 @@ const securityHeaders = [
       "connect-src 'self' https://api.web3forms.com https://api.github.com",
       "object-src 'self'",
       "frame-src 'self'",
-      "frame-ancestors 'none'",
+      "frame-ancestors 'self'",
     ].join("; "),
   },
 ];

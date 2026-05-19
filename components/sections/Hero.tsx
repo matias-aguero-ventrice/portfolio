@@ -158,9 +158,9 @@ export function Hero() {
                 {t.hero.cta2}
               </a>
             </MagneticButton>
-            <MagneticButton className="hidden sm:inline-block">
+            <span className="hidden sm:inline-block">
               <CVModal />
-            </MagneticButton>
+            </span>
           </motion.div>
 
           {/* Iconos sociales con brand colors en hover */}
