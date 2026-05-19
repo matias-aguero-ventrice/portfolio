@@ -3,25 +3,12 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { TextScramble } from "@/components/TextScramble";
-
-/* Editá estos testimonials con recomendaciones reales de gente con la que trabajaste */
-const testimonials = [
-  {
-    quote:
-      "Matías demostró una capacidad excepcional para diseñar e implementar soluciones que impactaron directamente en la operación de la empresa.",
-    author: "Equipo TuMatch Inmobiliario",
-    role: "Proptech - Chile",
-  },
-  {
-    quote:
-      "Excelente comunicación, cumple plazos y entiende rápido los requerimientos. Se nota que piensa en el producto, no solo en el código.",
-    author: "Cliente Made In 3D",
-    role: "San Juan, Argentina",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 export function Testimonials() {
-  if (testimonials.length === 0) return null;
+  const { t } = useI18n();
+
+  if (t.testimonials.items.length === 0) return null;
 
   return (
     <section className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
@@ -34,11 +21,11 @@ export function Testimonials() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <TextScramble text="Recomendaciones" />
+          <TextScramble text={t.testimonials.title} />
         </motion.h2>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {testimonials.map((t, i) => (
+          {t.testimonials.items.map((item, i) => (
             <motion.blockquote
               key={i}
               className="border-glow-hover rounded-xl border p-6"
@@ -50,14 +37,14 @@ export function Testimonials() {
             >
               <Quote className="mb-3 h-5 w-5" style={{ color: "var(--accent)" }} />
               <p className="text-sm leading-relaxed italic" style={{ color: "var(--text-secondary)" }}>
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{item.quote}&rdquo;
               </p>
               <div className="mt-4 border-t pt-3" style={{ borderColor: "var(--border)" }}>
                 <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>
-                  {t.author}
+                  {item.author}
                 </p>
                 <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
-                  {t.role}
+                  {item.role}
                 </p>
               </div>
             </motion.blockquote>

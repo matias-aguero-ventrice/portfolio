@@ -3,12 +3,14 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 /* Formulario que envía mensajes reales a tu email via Web3Forms.
    Registrate gratis en web3forms.com y reemplazá el access_key. */
 const WEB3FORMS_KEY = "20ea88a1-e6a2-4778-ac53-a5f98de85e30";
 
 export function ContactForm() {
+  const { t } = useI18n();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -49,7 +51,7 @@ export function ContactForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-xs font-medium" style={{ color: "var(--text-secondary)" }}>
-            Nombre
+            {t.contact.form.name}
           </label>
           <input
             type="text"
@@ -58,12 +60,12 @@ export function ContactForm() {
             required
             className="w-full rounded-lg border bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-[var(--accent)]"
             style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
-            placeholder="Tu nombre"
+            placeholder={t.contact.form.namePlaceholder}
           />
         </div>
         <div>
           <label htmlFor="email" className="mb-1.5 block text-xs font-medium" style={{ color: "var(--text-secondary)" }}>
-            Email
+            {t.contact.form.email}
           </label>
           <input
             type="email"
@@ -72,14 +74,14 @@ export function ContactForm() {
             required
             className="w-full rounded-lg border bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-[var(--accent)]"
             style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
-            placeholder="tu@email.com"
+            placeholder="email@example.com"
           />
         </div>
       </div>
 
       <div>
         <label htmlFor="message" className="mb-1.5 block text-xs font-medium" style={{ color: "var(--text-secondary)" }}>
-          Mensaje
+          {t.contact.form.message}
         </label>
         <textarea
           id="message"
@@ -88,7 +90,7 @@ export function ContactForm() {
           rows={4}
           className="w-full resize-none rounded-lg border bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-[var(--accent)]"
           style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
-          placeholder="Contame en qu&eacute; puedo ayudarte..."
+          placeholder={t.contact.form.messagePlaceholder}
         />
       </div>
 
@@ -102,21 +104,21 @@ export function ContactForm() {
         style={{ backgroundColor: "var(--accent)" }}
       >
         {status === "sending" ? (
-          "Enviando..."
+          t.contact.form.sending
         ) : status === "success" ? (
           <>
             <CheckCircle className="h-4 w-4" />
-            Enviado
+            {t.contact.form.sent}
           </>
         ) : status === "error" ? (
           <>
             <AlertCircle className="h-4 w-4" />
-            Error, intent&aacute; de nuevo
+            {t.contact.form.error}
           </>
         ) : (
           <>
             <Send className="h-4 w-4" />
-            Enviar mensaje
+            {t.contact.form.send}
           </>
         )}
       </button>

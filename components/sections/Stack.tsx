@@ -5,8 +5,10 @@ import { stackCategories } from "@/lib/data";
 import { iconMap } from "@/lib/icons";
 import { SimpleIcon } from "@/components/SimpleIcon";
 import { TextScramble } from "@/components/TextScramble";
+import { useI18n } from "@/lib/i18n";
 
 export function Stack() {
+  const { t } = useI18n();
   return (
     <section id="stack" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -18,7 +20,7 @@ export function Stack() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <TextScramble text="Stack t&#xe9;cnico" />
+          <TextScramble text={t.stack.title} />
         </motion.h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

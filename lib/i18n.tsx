@@ -8,7 +8,7 @@ type Translations = typeof es;
 
 const es = {
   nav: {
-    about: "Sobre mí",
+    about: "Sobre m\u00ed",
     projects: "Proyectos",
     stack: "Stack",
     experience: "Experiencia",
@@ -23,49 +23,88 @@ const es = {
     viewCv: "Ver CV",
   },
   about: {
-    title: "Sobre mí",
+    title: "Sobre m\u00ed",
     paragraphs: [
-      "Soy un developer junior con un enfoque particular: construyo sistemas reales apalancado en herramientas de IA, mientras yo me ocupo del diseño, la integración entre componentes y las decisiones de arquitectura. Mi formación de base es Técnico Electrónico, con estudios parciales en Tecnicatura Universitaria en Programación en la UNSJ.",
-      "Actualmente coordino la operación administrativa y el desarrollo web interno en TuMatch Inmobiliario (Grupo Propital), una proptech chilena. Diseñé e implementé desde cero el CRM que opera la compañía, en producción hace más de cinco meses, gestionando miles de leads, propiedades y corredores activos.",
-      "En paralelo dirijo Made In 3D, mi emprendimiento personal de manufactura aditiva, donde combino diseño, producción y atención directa al cliente.",
+      "Soy un developer junior con un enfoque particular: construyo sistemas reales apalancado en herramientas de IA, mientras yo me ocupo del dise\u00f1o, la integraci\u00f3n entre componentes y las decisiones de arquitectura. Mi formaci\u00f3n de base es T\u00e9cnico Electr\u00f3nico, con estudios parciales en Tecnicatura Universitaria en Programaci\u00f3n en la UNSJ.",
+      "Actualmente coordino la operaci\u00f3n administrativa y el desarrollo web interno en TuMatch Inmobiliario (Grupo Propital), una proptech chilena. Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera la compa\u00f1\u00eda, en producci\u00f3n hace m\u00e1s de cinco meses, gestionando miles de leads, propiedades y corredores activos.",
+      "En paralelo dirijo Made In 3D, mi emprendimiento personal de manufactura aditiva, donde combino dise\u00f1o, producci\u00f3n y atenci\u00f3n directa al cliente.",
     ],
     languages: "Idiomas",
     native: "Nativo",
   },
   projects: {
     title: "Proyectos destacados",
-    viewCode: "Ver código",
+    viewCode: "Ver c\u00f3digo",
     confidential: "Screenshots y demo bajo pedido por confidencialidad",
-    badges: { production: "En producción", startup: "Emprendimiento", openSource: "Open source" },
+    badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source" },
     crm: {
       subtitle: "Sistema CRM corporativo para proptech chilena",
-      description: "Diseñé e implementé desde cero el CRM que opera TuMatch Inmobiliario. Centraliza la operación comercial de una red de corredores en Chile e integra seis plataformas externas vía APIs REST.",
+      description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch Inmobiliario. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
+      metrics: {
+        leads: "leads", properties: "propiedades", production: "en producci\u00f3n",
+        apis: "APIs integradas", sales: "ventas membres\u00edas", record: "CLP r\u00e9cord",
+      },
     },
     made3d: {
-      subtitle: "Manufactura aditiva e impresión 3D",
-      description: "Emprendimiento personal desde mayo 2023. Diseño, producción, atención al cliente, marketing y administración integral. Trabajo con clientes finales y comercios.",
+      subtitle: "Manufactura aditiva e impresi\u00f3n 3D",
+      description: "Emprendimiento personal desde mayo 2023. Dise\u00f1o, producci\u00f3n, atenci\u00f3n al cliente, marketing y administraci\u00f3n integral. Trabajo con clientes finales y comercios.",
     },
     site: {
       subtitle: "Portfolio profesional",
-      description: "Sitio que estás viendo. Construido con Next.js 15, TypeScript, Tailwind CSS y shadcn/ui. Pensado mobile-first, con Lighthouse >95 en performance.",
+      description: "Sitio que est\u00e1s viendo. Construido con Next.js 15, TypeScript, Tailwind CSS y shadcn/ui. Pensado mobile-first, con Lighthouse >95 en performance.",
     },
   },
-  stack: { title: "Stack técnico" },
+  stack: { title: "Stack t\u00e9cnico" },
   experience: {
     title: "Experiencia profesional",
     present: "Presente",
+    roles: {
+      tumatch: "Coordinador Ejecutivo & Desarrollador Web Interno",
+      made3d: "Fundador",
+    },
+    achievements: {
+      tumatch: [
+        "Dise\u00f1o e implementaci\u00f3n del CRM interno de la compa\u00f1\u00eda",
+        "Coordinaci\u00f3n administrativa, financiera, contable y legal",
+        "Gesti\u00f3n de red de +150 corredores activos",
+        "R\u00e9cord hist\u00f3rico de recaudaci\u00f3n: $6.3M CLP",
+        "+40% en ventas de membres\u00edas",
+        "Ahorro operativo > $1.800.000 CLP",
+        "Supervisi\u00f3n de alumno en pr\u00e1ctica",
+      ],
+      made3d: [
+        "Dise\u00f1o, producci\u00f3n y postventa",
+        "Atenci\u00f3n al cliente directa",
+        "Marketing y comunicaci\u00f3n",
+        "Administraci\u00f3n integral",
+      ],
+    },
   },
   education: {
-    title: "Formación académica",
+    title: "Formaci\u00f3n acad\u00e9mica",
     graduated: "Egresado",
     partial: "Cursada parcial",
-    detail: "11/20 materias aprobadas. Intención de retomar y completar.",
+    detail: "11/20 materias aprobadas. Intenci\u00f3n de retomar y completar.",
   },
-  testimonials: { title: "Recomendaciones" },
+  testimonials: {
+    title: "Recomendaciones",
+    items: [
+      {
+        quote: "Mat\u00edas demostr\u00f3 una capacidad excepcional para dise\u00f1ar e implementar soluciones que impactaron directamente en la operaci\u00f3n de la empresa.",
+        author: "Equipo TuMatch Inmobiliario",
+        role: "Proptech - Chile",
+      },
+      {
+        quote: "Excelente comunicaci\u00f3n, cumple plazos y entiende r\u00e1pido los requerimientos. Se nota que piensa en el producto, no solo en el c\u00f3digo.",
+        author: "Cliente Made In 3D",
+        role: "San Juan, Argentina",
+      },
+    ],
+  },
   contact: {
     title: "Trabajemos juntos",
     subtitle: "Disponible para oportunidades junior/semi-senior en tech, modalidad remota o presencial en San Juan. Respondo todos los mensajes en menos de 24 horas.",
-    scanQr: "Escaneá el QR para hablarme por WhatsApp",
+    scanQr: "Escane\u00e1 el QR para hablarme por WhatsApp",
     saveContact: "Guardar contacto",
     downloadVcard: "Descargar vCard",
     form: {
@@ -73,15 +112,43 @@ const es = {
       namePlaceholder: "Tu nombre",
       email: "Email",
       message: "Mensaje",
-      messagePlaceholder: "Contame en qué puedo ayudarte...",
+      messagePlaceholder: "Contame en qu\u00e9 puedo ayudarte...",
       send: "Enviar mensaje",
       sending: "Enviando...",
       sent: "Enviado",
-      error: "Error, intentá de nuevo",
+      error: "Error, intent\u00e1 de nuevo",
     },
     copied: "Email copiado al portapapeles",
   },
-  github: { title: "Actividad en GitHub", publicRepos: "Repos públicos", languages: "Lenguajes", viewProfile: "Ver perfil completo" },
+  github: {
+    title: "Actividad en GitHub",
+    publicRepos: "Repos p\u00fablicos",
+    languages: "Lenguajes",
+    viewProfile: "Ver perfil completo",
+    lastUpdated: "\u00dalt. actualizaci\u00f3n",
+  },
+  cv: {
+    title: "CV - Mat\u00edas Ag\u00fcero Ventrice",
+    openNewTab: "Abrir en nueva pesta\u00f1a",
+    download: "Descargar",
+    fallback: "Tu navegador no puede mostrar el PDF directamente.",
+    openPdf: "Abrir PDF",
+  },
+  cmd: {
+    search: "Buscar secciones, acciones, links...",
+    noResults: "Sin resultados",
+    navigation: "Navegaci\u00f3n",
+    actions: "Acciones",
+    links: "Links",
+    switchLight: "Cambiar a modo claro",
+    switchDark: "Cambiar a modo oscuro",
+    downloadCv: "Descargar CV",
+    openGithub: "Abrir GitHub",
+    openLinkedin: "Abrir LinkedIn",
+    navigateArrows: "Navegar con flechas",
+    enterToSelect: "Enter para seleccionar",
+    schedule: "Agend\u00e1 una llamada",
+  },
 };
 
 const en: Translations = {
@@ -118,6 +185,10 @@ const en: Translations = {
     crm: {
       subtitle: "Corporate CRM system for Chilean proptech",
       description: "I designed and built from scratch the CRM that runs TuMatch Inmobiliario. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
+      metrics: {
+        leads: "leads", properties: "properties", production: "in production",
+        apis: "APIs integrated", sales: "membership sales", record: "CLP record",
+      },
     },
     made3d: {
       subtitle: "Additive manufacturing & 3D printing",
@@ -132,6 +203,27 @@ const en: Translations = {
   experience: {
     title: "Professional experience",
     present: "Present",
+    roles: {
+      tumatch: "Executive Coordinator & Internal Web Developer",
+      made3d: "Founder",
+    },
+    achievements: {
+      tumatch: [
+        "Design and implementation of the company's internal CRM",
+        "Administrative, financial, accounting, and legal coordination",
+        "Management of a network of 150+ active brokers",
+        "All-time revenue record: $6.3M CLP",
+        "+40% in membership sales",
+        "Operational savings > $1,800,000 CLP",
+        "Internship student supervision",
+      ],
+      made3d: [
+        "Design, production, and after-sales",
+        "Direct customer service",
+        "Marketing and communications",
+        "Full administration",
+      ],
+    },
   },
   education: {
     title: "Education",
@@ -139,7 +231,21 @@ const en: Translations = {
     partial: "Partial completion",
     detail: "11/20 subjects approved. Planning to resume and complete.",
   },
-  testimonials: { title: "Recommendations" },
+  testimonials: {
+    title: "Recommendations",
+    items: [
+      {
+        quote: "Mat\u00edas showed exceptional ability to design and implement solutions that directly impacted the company's operations.",
+        author: "TuMatch Inmobiliario Team",
+        role: "Proptech - Chile",
+      },
+      {
+        quote: "Excellent communication, meets deadlines, and quickly understands requirements. You can tell he thinks about the product, not just the code.",
+        author: "Made In 3D Client",
+        role: "San Juan, Argentina",
+      },
+    ],
+  },
   contact: {
     title: "Let's work together",
     subtitle: "Available for junior/mid-level tech opportunities, remote or on-site in San Juan. I reply to all messages within 24 hours.",
@@ -159,7 +265,35 @@ const en: Translations = {
     },
     copied: "Email copied to clipboard",
   },
-  github: { title: "GitHub activity", publicRepos: "Public repos", languages: "Languages", viewProfile: "View full profile" },
+  github: {
+    title: "GitHub Activity",
+    publicRepos: "Public repos",
+    languages: "Languages",
+    viewProfile: "View full profile",
+    lastUpdated: "Last updated",
+  },
+  cv: {
+    title: "CV - Mat\u00edas Ag\u00fcero Ventrice",
+    openNewTab: "Open in new tab",
+    download: "Download",
+    fallback: "Your browser can't display the PDF directly.",
+    openPdf: "Open PDF",
+  },
+  cmd: {
+    search: "Search sections, actions, links...",
+    noResults: "No results",
+    navigation: "Navigation",
+    actions: "Actions",
+    links: "Links",
+    switchLight: "Switch to light mode",
+    switchDark: "Switch to dark mode",
+    downloadCv: "Download CV",
+    openGithub: "Open GitHub",
+    openLinkedin: "Open LinkedIn",
+    navigateArrows: "Navigate with arrows",
+    enterToSelect: "Enter to select",
+    schedule: "Schedule a call",
+  },
 };
 
 const translations = { es, en };

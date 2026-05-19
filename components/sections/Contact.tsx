@@ -6,6 +6,7 @@ import { Mail, MessageCircle, Linkedin, Check, Copy } from "lucide-react";
 import { WhatsAppQR } from "@/components/QRCode";
 import { VCardButton } from "@/components/VCardButton";
 import { ContactForm } from "@/components/ContactForm";
+import { useI18n } from "@/lib/i18n";
 import { personalInfo } from "@/lib/data";
 
 const contactButtons = [
@@ -36,6 +37,7 @@ const contactButtons = [
 ];
 
 export function Contact() {
+  const { t } = useI18n();
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async (e: React.MouseEvent, value: string) => {
@@ -71,16 +73,14 @@ export function Contact() {
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
               style={{ color: "var(--text-primary)" }}
             >
-              Trabajemos juntos
+              {t.contact.title}
             </h2>
 
             <p
               className="mx-auto mt-4 max-w-lg text-sm sm:text-base"
               style={{ color: "var(--text-secondary)" }}
             >
-              Disponible para oportunidades junior/semi-senior en tech,
-              modalidad remota o presencial en San Juan. Respondo todos los
-              mensajes en menos de 24 horas.
+              {t.contact.subtitle}
             </p>
 
             {/* Botones de contacto */}
@@ -118,7 +118,7 @@ export function Contact() {
               <WhatsAppQR url={personalInfo.whatsappLink} size={100} />
               <div className="text-center sm:text-left">
                 <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Escane&aacute; el QR para hablarme por WhatsApp
+                  {t.contact.scanQr}
                 </p>
                 <div className="mt-3">
                   <VCardButton />
@@ -139,7 +139,7 @@ export function Contact() {
               exit={{ opacity: 0, y: 20 }}
             >
               <Check className="h-4 w-4" style={{ color: "var(--accent)" }} />
-              <span className="text-sm">Email copiado al portapapeles</span>
+              <span className="text-sm">{t.contact.copied}</span>
             </motion.div>
           )}
         </AnimatePresence>

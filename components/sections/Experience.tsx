@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
 import { TextScramble } from "@/components/TextScramble";
+import { useI18n } from "@/lib/i18n";
 import { experiences } from "@/lib/data";
 
 export function Experience() {
+  const { t } = useI18n();
   return (
     <section id="experiencia" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-3xl">
@@ -17,7 +19,7 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <TextScramble text="Experiencia profesional" />
+          <TextScramble text={t.experience.title} />
         </motion.h2>
 
         {/* Timeline */}

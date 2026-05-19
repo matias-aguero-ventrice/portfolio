@@ -7,6 +7,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { TiltCard } from "@/components/TiltCard";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { TextScramble } from "@/components/TextScramble";
+import { useI18n } from "@/lib/i18n";
 import { projects } from "@/lib/data";
 import type { Project } from "@/lib/data";
 
@@ -123,6 +124,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 export function Projects() {
+  const { t } = useI18n();
   return (
     <section id="proyectos" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -134,7 +136,7 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <TextScramble text="Proyectos destacados" />
+          <TextScramble text={t.projects.title} />
         </motion.h2>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

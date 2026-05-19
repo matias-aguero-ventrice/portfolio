@@ -1,6 +1,7 @@
 "use client";
 
 import { UserPlus } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 import { personalInfo } from "@/lib/data";
 
 /* Genera y descarga un archivo .vcf con los datos de contacto */
@@ -21,6 +22,7 @@ function generateVCard(): string {
 }
 
 export function VCardButton() {
+  const { t } = useI18n();
   const handleDownload = () => {
     const vcard = generateVCard();
     const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
@@ -39,9 +41,9 @@ export function VCardButton() {
       style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
     >
       <UserPlus className="h-5 w-5" style={{ color: "var(--accent)" }} />
-      <span className="text-sm font-medium">Guardar contacto</span>
+      <span className="text-sm font-medium">{t.contact.saveContact}</span>
       <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-        Descargar vCard
+        {t.contact.downloadVcard}
       </span>
     </button>
   );

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 import { education } from "@/lib/data";
 
 const iconComponents = {
@@ -15,6 +16,7 @@ const badgeColors = {
 } as const;
 
 export function Education() {
+  const { t } = useI18n();
   return (
     <section id="educacion" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -26,7 +28,7 @@ export function Education() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          Formaci&oacute;n acad&eacute;mica
+          {t.education.title}
         </motion.h2>
 
         <div className="grid gap-5 sm:grid-cols-2">
