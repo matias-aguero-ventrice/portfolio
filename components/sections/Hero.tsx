@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
+import { TypingText } from "@/components/TypingText";
 import { personalInfo } from "@/lib/data";
 
 const fadeUp = {
@@ -98,13 +99,13 @@ export function Hero() {
             {personalInfo.headline}
           </motion.p>
 
-          <motion.p
+          <motion.div
             className="mt-2 text-base"
             style={{ color: "var(--text-secondary)" }}
             variants={fadeUp}
           >
-            {personalInfo.subHeadline}
-          </motion.p>
+            <TypingText text={personalInfo.subHeadline} delay={800} speed={40} />
+          </motion.div>
 
           <motion.div
             className="mt-3 flex items-center gap-1.5 text-sm"

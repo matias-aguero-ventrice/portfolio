@@ -51,8 +51,17 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Theme toggle */}
-          <ThemeToggle />
+          {/* Ctrl+K hint + Theme toggle */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true }))}
+              className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs transition-colors hover:border-[var(--accent)] sm:inline-flex"
+              style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}
+            >
+              <kbd className="font-mono text-[10px]">Ctrl K</kbd>
+            </button>
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
     </header>

@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mail, MessageCircle, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, MessageCircle, Linkedin, Check, Copy } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 const contactButtons = [
@@ -11,6 +12,7 @@ const contactButtons = [
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
     external: false,
+    copyable: true,
   },
   {
     icon: MessageCircle,
@@ -18,6 +20,7 @@ const contactButtons = [
     value: personalInfo.whatsapp,
     href: personalInfo.whatsappLink,
     external: true,
+    copyable: false,
   },
   {
     icon: Linkedin,
@@ -25,10 +28,20 @@ const contactButtons = [
     value: "@matias-aguero-ventrice",
     href: personalInfo.linkedinUrl,
     external: true,
+    copyable: false,
   },
 ];
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (e: React.MouseEvent, value: string) => {
+    e.preventDefault();
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contacto" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-3xl">
@@ -75,7 +88,8 @@ export function Contact() {
                   href={btn.href}
                   target={btn.external ? "_blank" : undefined}
                   rel={btn.external ? "noopener noreferrer" : undefined}
-                  className="border-glow-hover flex flex-col items-center gap-2 rounded-xl border p-4 transition-colors sm:p-5"
+                  onClick={btn.copyable ? (e) => handleCopy(e, btn.value) : undefined}
+                  className="border-glow-hover group relative flex flex-col items-center gap-2 rounded-xl border p-4 transition-colors sm:p-5"
                   style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -84,14 +98,33 @@ export function Contact() {
                 >
                   <btn.icon className="h-5 w-5" style={{ color: "var(--accent)" }} />
                   <span className="text-sm font-medium">{btn.label}</span>
-                  <span className="text-xs break-all" style={{ color: "var(--text-secondary)" }}>
+                  <span className="flex items-center gap-1 text-xs break-all" style={{ color: "var(--text-secondary)" }}>
                     {btn.value}
+                    {btn.copyable && (
+                      <Copy className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+                    )}
                   </span>
                 </motion.a>
               ))}
             </div>
           </div>
         </motion.div>
+
+        {/* Toast de copiado */}
+        <AnimatePresence>
+          {copied && (
+            <motion.div
+              className="fixed bottom-6 left-1/2 z-[70] flex -translate-x-1/2 items-center gap-2 rounded-lg border px-4 py-2.5 shadow-lg"
+              style={{ backgroundColor: "var(--surface)", borderColor: "var(--accent)", color: "var(--text-primary)" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
+              <Check className="h-4 w-4" style={{ color: "var(--accent)" }} />
+              <span className="text-sm">Email copiado al portapapeles</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

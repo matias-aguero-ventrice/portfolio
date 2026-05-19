@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { TiltCard } from "@/components/TiltCard";
 import { projects } from "@/lib/data";
 import type { Project } from "@/lib/data";
 
@@ -14,6 +16,7 @@ const badgeColors = {
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
+    <TiltCard className="h-full">
     <motion.article
       className="border-glow-hover group relative flex h-full flex-col overflow-hidden rounded-xl border p-5 sm:p-6"
       style={{
@@ -24,7 +27,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
       {/* Badge */}
       <div className="mb-4 flex items-start justify-between gap-2">
@@ -64,9 +66,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         >
           {project.metrics.map((metric) => (
             <div key={metric.label} className="text-center">
-              <p className="font-mono text-base font-bold sm:text-lg" style={{ color: "var(--accent)" }}>
-                {metric.value}
-              </p>
+              <AnimatedCounter
+                value={metric.value}
+                className="block font-mono text-base font-bold sm:text-lg"
+                style={{ color: "var(--accent)" }}
+              />
               <p className="text-[11px] leading-tight" style={{ color: "var(--text-secondary)" }}>
                 {metric.label}
               </p>
@@ -110,6 +114,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </a>
       )}
     </motion.article>
+    </TiltCard>
   );
 }
 
