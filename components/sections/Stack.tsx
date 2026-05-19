@@ -38,7 +38,7 @@ export function Stack() {
                 className="mb-4 text-xs font-semibold uppercase tracking-widest"
                 style={{ color: "var(--accent)" }}
               >
-                {category.title}
+                {t.stack.categories[catIndex] || category.title}
               </h3>
 
               <div className="flex flex-wrap gap-2">

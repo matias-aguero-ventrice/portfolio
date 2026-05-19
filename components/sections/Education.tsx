@@ -3,12 +3,8 @@
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { education } from "@/lib/data";
 
-const iconComponents = {
-  graduation: GraduationCap,
-  book: BookOpen,
-} as const;
+const iconByIndex = [GraduationCap, BookOpen];
 
 const badgeColors = {
   green: "bg-green-500/10 text-green-600 dark:text-green-400",
@@ -17,6 +13,7 @@ const badgeColors = {
 
 export function Education() {
   const { t } = useI18n();
+
   return (
     <section id="educacion" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -32,11 +29,11 @@ export function Education() {
         </motion.h2>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {education.map((edu, i) => {
-            const Icon = iconComponents[edu.icon];
+          {t.education.entries.map((edu, i) => {
+            const Icon = iconByIndex[i] || BookOpen;
             return (
               <motion.article
-                key={edu.institution}
+                key={i}
                 className="border-glow-hover rounded-xl border p-5 sm:p-6"
                 style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
                 initial={{ opacity: 0, y: 20 }}
@@ -54,18 +51,13 @@ export function Education() {
                       <h3 className="text-base font-semibold sm:text-lg" style={{ color: "var(--text-primary)" }}>
                         {edu.title}
                       </h3>
-                      <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeColors[edu.badge.color]}`}>
-                        {edu.badge.text}
+                      <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeColors[edu.badgeColor]}`}>
+                        {edu.badge}
                       </span>
                     </div>
 
-                    <p className="mt-1.5 text-sm" style={{ color: "var(--text-secondary)" }}>
-                      {edu.institution}
-                    </p>
-
-                    <p className="mt-1 text-sm" style={{ color: "var(--text-secondary)" }}>
-                      {edu.period}
-                    </p>
+                    <p className="mt-1.5 text-sm" style={{ color: "var(--text-secondary)" }}>{edu.institution}</p>
+                    <p className="mt-1 text-sm" style={{ color: "var(--text-secondary)" }}>{edu.period}</p>
 
                     {edu.detail && (
                       <p className="mt-3 rounded-md p-2.5 text-sm italic" style={{ backgroundColor: "var(--background)", color: "var(--text-secondary)" }}>
