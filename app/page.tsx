@@ -17,6 +17,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageLoader } from "@/components/PageLoader";
 import { EasterEggs } from "@/components/EasterEggs";
 import { PresentationMode } from "@/components/PresentationMode";
+import { ChatBot } from "@/components/ChatBot";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <ScrollToTop />
       <EasterEggs />
       <PresentationMode />
+      <ChatBot />
       <Navbar />
       <main>
         <Hero />
