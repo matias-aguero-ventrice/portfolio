@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* ===================================================
+   Variables de tema - Paleta Zinc + Acento Naranja
+   Editá estos valores para cambiar los colores del sitio
+   =================================================== */
+
+@theme {
+  /* Colores de acento */
+  --color-accent: #ea580c;
+  --color-accent-hover: #f97316;
+  --color-accent-dark-hover: #c2410c;
+
+  /* Fuentes configuradas desde layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode (default) */
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --surface: #18181b;
+  --border: #27272a;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --accent: #ea580c;
+  --accent-hover: #f97316;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: #fafafa;
+  --border: #e4e4e7;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --accent: #ea580c;
+  --accent-hover: #c2410c;
+}
+
+/* next-themes usa class strategy por default */
+.light {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: #fafafa;
+  --border: #e4e4e7;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --accent: #ea580c;
+  --accent-hover: #c2410c;
+}
+
+/* ===================================================
+   Estilos base
+   =================================================== */
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Scroll suave para los anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Seleccion con acento naranja */
+::selection {
+  background-color: #ea580c40;
+  color: var(--text-primary);
+}
