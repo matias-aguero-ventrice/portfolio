@@ -1,7 +1,7 @@
 "use client";
 
 import { Calendar } from "lucide-react";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
 const CAL_USER = "matias-valentin-aguero-ventrice-9qhrev";

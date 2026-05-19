@@ -199,7 +199,7 @@ export function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Preguntame algo..."
                 maxLength={500}
-                className="flex-1 bg-transparent text-sm outline-none"
+                className="flex-1 bg-transparent text-base sm:text-sm outline-none"
                 style={{ color: "var(--text-primary)" }}
                 disabled={loading}
               />

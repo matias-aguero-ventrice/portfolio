@@ -50,7 +50,7 @@ export function PresentationMode() {
     <AnimatePresence>
       <motion.button
         onClick={running ? stop : start}
-        className="fixed right-5 bottom-16 z-50 rounded-full border p-3 shadow-lg transition-colors hover:border-[var(--accent)]"
+        className="fixed right-5 bottom-20 z-50 hidden rounded-full border p-3 shadow-lg transition-colors hover:border-[var(--accent)] sm:flex"
         style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

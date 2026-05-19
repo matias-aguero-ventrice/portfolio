@@ -228,7 +228,7 @@ export function CommandPalette() {
                 ref={inputRef}
                 type="text"
                 placeholder="Buscar secciones, acciones, links..."
-                className="w-full bg-transparent text-sm outline-none placeholder:text-[var(--text-secondary)]"
+                className="w-full bg-transparent text-base sm:text-sm outline-none placeholder:text-[var(--text-secondary)]"
                 style={{ color: "var(--text-primary)" }}
                 value={query}
                 onChange={(e) => {
