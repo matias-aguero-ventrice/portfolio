@@ -27,7 +27,7 @@ type GitHubData = {
   user: GitHubUser;
   repos: Repo[];
   languages: Record<string, number>;
-  totalStars: number;
+  totalCommits: number;
 };
 
 const GITHUB_USER = "matias-aguero-ventrice";
@@ -69,18 +69,28 @@ export function GitHubStats() {
         const repos: Repo[] = await reposRes.json();
 
         const languages: Record<string, number> = {};
-        let totalStars = 0;
         repos.forEach((repo) => {
           if (repo.language) languages[repo.language] = (languages[repo.language] || 0) + 1;
-          totalStars += repo.stargazers_count;
         });
+
+        /* Contar commits totales del usuario via Search API */
+        let totalCommits = 0;
+        try {
+          const commitsRes = await fetch(`https://api.github.com/search/commits?q=author:${GITHUB_USER}`, {
+            headers: { Accept: "application/vnd.github.cloak-preview+json" },
+          });
+          if (commitsRes.ok) {
+            const commitsData = await commitsRes.json();
+            totalCommits = commitsData.total_count || 0;
+          }
+        } catch { /* silenciar */ }
 
         const sorted = [...repos]
           .filter((r) => !r.name.startsWith(".") && r.description)
           .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
           .slice(0, 6);
 
-        setData({ user, repos: sorted, languages, totalStars });
+        setData({ user, repos: sorted, languages, totalCommits });
       } catch {
         /* La sección no se muestra si falla */
       } finally {
@@ -126,8 +136,8 @@ export function GitHubStats() {
             <p className="mt-1 text-xs" style={{ color: "var(--text-secondary)" }}>{t.github.languages}</p>
           </div>
           <div className="rounded-xl border p-4 text-center" style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}>
-            <AnimatedCounter value={String(data.totalStars)} className="block font-mono text-2xl font-bold" style={{ color: "var(--accent)" }} />
-            <p className="mt-1 text-xs" style={{ color: "var(--text-secondary)" }}>Stars</p>
+            <AnimatedCounter value={String(data.totalCommits)} className="block font-mono text-2xl font-bold" style={{ color: "var(--accent)" }} />
+            <p className="mt-1 text-xs" style={{ color: "var(--text-secondary)" }}>Commits</p>
           </div>
           <div className="flex items-center justify-center rounded-xl border p-4" style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}>
             <a href={personalInfo.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-[var(--accent)]" style={{ color: "var(--text-primary)" }}>
