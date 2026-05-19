@@ -7,6 +7,7 @@ import { TypingText } from "@/components/TypingText";
 import { MagneticButton } from "@/components/MagneticButton";
 import { GridBackground } from "@/components/GridBackground";
 import { CVModal } from "@/components/CVModal";
+import { useI18n } from "@/lib/i18n";
 import { personalInfo } from "@/lib/data";
 
 /* Colores de marca para hover de iconos sociales */
@@ -32,6 +33,7 @@ const stagger = {
 };
 
 export function Hero() {
+  const { t } = useI18n();
   return (
     <section className="relative flex min-h-svh w-full items-center overflow-hidden px-4 pt-16 pb-12 sm:px-6 lg:px-8">
       {/* Grid interactivo de fondo */}
@@ -94,7 +96,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
-              Disponible para nuevas oportunidades
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -110,7 +112,7 @@ export function Hero() {
             style={{ color: "var(--text-secondary)" }}
             variants={fadeUp}
           >
-            {personalInfo.headline}
+            {t.hero.headline}
           </motion.p>
 
           <motion.div
@@ -118,7 +120,7 @@ export function Hero() {
             style={{ color: "var(--text-secondary)" }}
             variants={fadeUp}
           >
-            <TypingText text={personalInfo.subHeadline} delay={800} speed={40} />
+            <TypingText text={t.hero.subHeadline} delay={800} speed={40} />
           </motion.div>
 
           <motion.div
@@ -141,7 +143,7 @@ export function Hero() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all hover:brightness-110 sm:w-auto"
                 style={{ backgroundColor: "var(--accent)" }}
               >
-                Contactame
+                {t.hero.cta1}
               </a>
             </MagneticButton>
             <MagneticButton className="w-full sm:w-auto">
@@ -153,7 +155,7 @@ export function Hero() {
                 style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
               >
                 <Download className="h-4 w-4" />
-                Descargar CV
+                {t.hero.cta2}
               </a>
             </MagneticButton>
             <MagneticButton className="hidden sm:block">

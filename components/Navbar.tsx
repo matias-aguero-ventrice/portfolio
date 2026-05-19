@@ -2,12 +2,28 @@
 
 import { useEffect, useState } from "react";
 import { navLinks, personalInfo } from "@/lib/data";
+import { useI18n } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LangToggle } from "@/components/LangToggle";
 
 /* Navbar con scroll spy - resalta la sección visible */
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { t } = useI18n();
+
+  /* Labels traducidos para los links */
+  const translatedLinks = navLinks.map((link) => {
+    const key = link.href.replace("#", "").replace("-", "");
+    const labelMap: Record<string, string> = {
+      sobremi: t.nav.about,
+      proyectos: t.nav.projects,
+      stack: t.nav.stack,
+      experiencia: t.nav.experience,
+      contacto: t.nav.contact,
+    };
+    return { ...link, label: labelMap[key] || link.label };
+  });
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -59,7 +75,7 @@ export function Navbar() {
           </a>
 
           <div className="hidden items-center gap-1 md:flex">
-            {navLinks.map((link) => {
+            {translatedLinks.map((link) => {
               const isActive = activeSection === link.href.replace("#", "");
               return (
                 <a
@@ -88,6 +104,7 @@ export function Navbar() {
             >
               <kbd className="font-mono text-[10px]">Ctrl K</kbd>
             </button>
+            <LangToggle />
             <ThemeToggle />
           </div>
         </div>

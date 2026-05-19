@@ -3,17 +3,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Globe } from "lucide-react";
-import { aboutParagraphs } from "@/lib/data";
 import { TextScramble } from "@/components/TextScramble";
-
-const languages = [
-  { name: "Espa\u00f1ol", level: "Nativo", percent: 100 },
-  { name: "Ingl\u00e9s", level: "B1", percent: 45 },
-];
+import { useI18n } from "@/lib/i18n";
 
 function LanguageBars() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { t } = useI18n();
+
+  const languages = [
+    { name: "Espa\u00f1ol", level: t.about.native, percent: 100 },
+    { name: "Ingl\u00e9s", level: "B1", percent: 45 },
+  ];
 
   return (
     <motion.div
@@ -28,7 +29,7 @@ function LanguageBars() {
       <div className="mb-4 flex items-center gap-2">
         <Globe className="h-4 w-4" style={{ color: "var(--accent)" }} />
         <h3 className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
-          Idiomas
+          {t.about.languages}
         </h3>
       </div>
       <div className="space-y-3">
@@ -55,6 +56,8 @@ function LanguageBars() {
 }
 
 export function About() {
+  const { t } = useI18n();
+
   return (
     <section id="sobre-mi" className="section-alt w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-3xl">
@@ -68,12 +71,12 @@ export function About() {
             className="mb-8 border-l-[3px] pl-4 text-2xl font-bold tracking-tight sm:text-3xl"
             style={{ borderColor: "var(--accent)", color: "var(--text-primary)" }}
           >
-            <TextScramble text="Sobre m&#xed;" />
+            <TextScramble text={t.about.title} />
           </h2>
         </motion.div>
 
         <div className="space-y-4">
-          {aboutParagraphs.map((paragraph, i) => (
+          {t.about.paragraphs.map((paragraph, i) => (
             <motion.p
               key={i}
               className="text-[15px] leading-relaxed sm:text-base"
