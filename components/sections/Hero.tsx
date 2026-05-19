@@ -6,6 +6,7 @@ import { MapPin, Github, Linkedin, Mail, Download, ChevronDown } from "lucide-re
 import { TypingText } from "@/components/TypingText";
 import { MagneticButton } from "@/components/MagneticButton";
 import { GridBackground } from "@/components/GridBackground";
+import { CVModal } from "@/components/CVModal";
 import { personalInfo } from "@/lib/data";
 
 /* Colores de marca para hover de iconos sociales */
@@ -154,6 +155,9 @@ export function Hero() {
                 <Download className="h-4 w-4" />
                 Descargar CV
               </a>
+            </MagneticButton>
+            <MagneticButton className="hidden sm:block">
+              <CVModal />
             </MagneticButton>
           </motion.div>
 

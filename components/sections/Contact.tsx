@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MessageCircle, Linkedin, Check, Copy } from "lucide-react";
+import { WhatsAppQR } from "@/components/QRCode";
+import { VCardButton } from "@/components/VCardButton";
+import { ContactForm } from "@/components/ContactForm";
 import { personalInfo } from "@/lib/data";
 
 const contactButtons = [
@@ -106,6 +109,21 @@ export function Contact() {
                   </span>
                 </motion.a>
               ))}
+            </div>
+            {/* Formulario de contacto */}
+            <ContactForm />
+
+            {/* Fila extra: QR + vCard */}
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <WhatsAppQR url={personalInfo.whatsappLink} size={100} />
+              <div className="text-center sm:text-left">
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  Escane&aacute; el QR para hablarme por WhatsApp
+                </p>
+                <div className="mt-3">
+                  <VCardButton />
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
