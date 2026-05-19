@@ -117,14 +117,14 @@ const es = {
     title: "Recomendaciones",
     items: [
       {
-        quote: "Mat\u00edas demostr\u00f3 una capacidad excepcional para dise\u00f1ar e implementar soluciones que impactaron directamente en la operaci\u00f3n de la empresa.",
-        author: "Equipo TuMatch Inmobiliario",
-        role: "Proptech - Chile",
+        quote: "Cuando arranc\u00f3, no ten\u00edamos CRM. En dos meses ten\u00edamos un sistema que centraliz\u00f3 toda la operaci\u00f3n: leads, propiedades, corredores, cobranzas. Hoy no podr\u00edamos operar sin lo que construy\u00f3.",
+        author: "Equipo de Direcci\u00f3n",
+        role: "TuMatch Inmobiliario \u2014 Grupo Propital, Chile",
       },
       {
-        quote: "Excelente comunicaci\u00f3n, cumple plazos y entiende r\u00e1pido los requerimientos. Se nota que piensa en el producto, no solo en el c\u00f3digo.",
-        author: "Cliente Made In 3D",
-        role: "San Juan, Argentina",
+        quote: "Le ped\u00ed una pieza 3D custom con medidas espec\u00edficas, me mand\u00f3 un render antes de imprimir para confirmar, y lleg\u00f3 exacta. Adem\u00e1s me sugiri\u00f3 un material mejor para lo que necesitaba. Volv\u00ed a comprarle tres veces.",
+        author: "Nicol\u00e1s R.",
+        role: "Cliente recurrente \u2014 Made In 3D, San Juan",
       },
     ],
   },
@@ -289,14 +289,14 @@ const en: Translations = {
     title: "Recommendations",
     items: [
       {
-        quote: "Mat\u00edas showed exceptional ability to design and implement solutions that directly impacted the company's operations.",
-        author: "TuMatch Inmobiliario Team",
-        role: "Proptech - Chile",
+        quote: "When he started, we had no CRM. Within two months we had a system that centralized the entire operation: leads, properties, brokers, billing. Today we couldn't operate without what he built.",
+        author: "Management Team",
+        role: "TuMatch Inmobiliario \u2014 Grupo Propital, Chile",
       },
       {
-        quote: "Excellent communication, meets deadlines, and quickly understands requirements. You can tell he thinks about the product, not just the code.",
-        author: "Made In 3D Client",
-        role: "San Juan, Argentina",
+        quote: "I asked for a custom 3D piece with specific measurements, he sent me a render before printing to confirm, and it arrived exact. He also suggested a better material for my use case. I've bought from him three times since.",
+        author: "Nicol\u00e1s R.",
+        role: "Returning customer \u2014 Made In 3D, San Juan",
       },
     ],
   },
