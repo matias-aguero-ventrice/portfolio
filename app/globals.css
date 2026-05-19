@@ -125,8 +125,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 6s ease-in-out infinite;
-  padding-block: 0.05em;
-  line-height: 1.15;
+  padding-bottom: 0.15em;
+  line-height: 1.2;
+  display: inline-block;
 }
 
 @keyframes gradient-shift {
