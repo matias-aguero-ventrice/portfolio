@@ -30,7 +30,7 @@ const contactButtons = [
 
 export function Contact() {
   return (
-    <section id="contacto" className="w-full px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+    <section id="contacto" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <motion.div
           className="relative overflow-hidden rounded-2xl border p-6 text-center sm:p-10 md:p-14"

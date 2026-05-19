@@ -6,7 +6,7 @@ import { experiences } from "@/lib/data";
 
 export function Experience() {
   return (
-    <section id="experiencia" className="w-full px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+    <section id="experiencia" className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <motion.h2
           className="mb-10 border-l-[3px] pl-4 text-2xl font-bold tracking-tight sm:text-3xl"
