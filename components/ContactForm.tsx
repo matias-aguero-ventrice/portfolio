@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-const WEB3FORMS_KEY = "20ea88a1-e6a2-4778-ac53-a5f98de85e30";
-
 export function ContactForm() {
   const { t } = useI18n();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -16,12 +14,16 @@ export function ContactForm() {
     setStatus("sending");
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", WEB3FORMS_KEY);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
       });
       const data = await res.json();
 
@@ -86,6 +88,7 @@ export function ContactForm() {
           name="message"
           required
           rows={4}
+          maxLength={2000}
           className="w-full resize-none rounded-lg border bg-transparent px-3 py-2.5 text-base outline-none transition-colors focus:border-[var(--accent)] sm:text-sm"
           style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
           placeholder={t.contact.form.messagePlaceholder}

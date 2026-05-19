@@ -17,7 +17,7 @@ const siteUrl = "https://matiasaguero.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Matias Aguero Ventrice -- Junior Full-Stack Developer",
+  title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
   description:
     "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase, apalancado en herramientas de IA. Coordinador Ejecutivo en TuMatch Inmobiliario.",
   keywords: [
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: siteUrl,
     siteName: "Matias Aguero Ventrice",
-    title: "Matias Aguero Ventrice -- Junior Full-Stack Developer",
+    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
     description:
       "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matias Aguero Ventrice -- Junior Full-Stack Developer",
+    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
     description:
       "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase.",
     images: ["/opengraph-image"],

@@ -54,9 +54,32 @@ ENFOQUE: Construye sistemas reales apalancado en herramientas de IA. Él se ocup
 
 DISPONIBILIDAD: Abierto a oportunidades junior/semi-senior en tech, modalidad remota o presencial en San Juan.`;
 
+/* Rate limiter en memoria: 10 mensajes por minuto por IP */
+const rateLimits = new Map<string, { count: number; reset: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimits.get(ip);
+
+  if (!entry || now > entry.reset) {
+    rateLimits.set(ip, { count: 1, reset: now + 60_000 });
+    return false;
+  }
+
+  if (entry.count >= 10) return true;
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: NextRequest) {
   if (!GROQ_API_KEY) {
     return NextResponse.json({ error: "API key no configurada" }, { status: 500 });
+  }
+
+  /* Rate limiting por IP */
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: "Demasiadas solicitudes. Esperá un minuto." }, { status: 429 });
   }
 
   try {
