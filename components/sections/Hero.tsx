@@ -158,7 +158,7 @@ export function Hero() {
                 {t.hero.cta2}
               </a>
             </MagneticButton>
-            <MagneticButton className="hidden sm:block">
+            <MagneticButton className="hidden sm:inline-block">
               <CVModal />
             </MagneticButton>
           </motion.div>
