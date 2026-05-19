@@ -4,52 +4,46 @@ import { useEffect, useState } from "react";
 import { navLinks, personalInfo } from "@/lib/data";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-/* Navbar sticky que aparece al hacer scroll pasado el hero */
+/* Navbar sticky que aparece con fondo al scrollear */
 export function Navbar() {
-  const [visible, setVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      /* Aparece despues de scrollear 400px (aprox fin del hero) */
-      setVisible(window.scrollY > 400);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        visible
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50">
       <nav
-        className="border-b backdrop-blur-md"
+        className="w-full border-b transition-all duration-300"
         style={{
-          backgroundColor: "color-mix(in srgb, var(--background) 80%, transparent)",
-          borderColor: "var(--border)",
+          backgroundColor: scrolled
+            ? "color-mix(in srgb, var(--background) 85%, transparent)"
+            : "transparent",
+          borderColor: scrolled ? "var(--border)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3">
-          {/* Iniciales / nombre corto */}
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          {/* Logo / nombre */}
           <a
             href="#"
-            className="text-sm font-semibold tracking-tight"
+            className="text-sm font-bold tracking-tight transition-colors hover:text-[var(--accent)]"
             style={{ color: "var(--text-primary)" }}
           >
-            <span className="md:hidden">{personalInfo.initials}</span>
-            <span className="hidden md:inline">{personalInfo.shortName}</span>
+            <span className="sm:hidden">{personalInfo.initials}</span>
+            <span className="hidden sm:inline">{personalInfo.shortName}</span>
           </a>
 
           {/* Links de navegacion - solo desktop */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm transition-colors hover:text-[var(--accent)]"
+                className="rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {link.label}

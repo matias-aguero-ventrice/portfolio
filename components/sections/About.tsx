@@ -3,54 +3,34 @@
 import { motion } from "framer-motion";
 import { aboutParagraphs } from "@/lib/data";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function About() {
   return (
-    <section id="sobre-mi" className="px-6 py-20">
+    <section id="sobre-mi" className="section-alt w-full px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
+          transition={{ duration: 0.5 }}
         >
-          {/* Heading con barra naranja vertical */}
           <h2
-            className="mb-10 border-l-[3px] pl-4 text-3xl font-bold tracking-tight"
-            style={{
-              borderColor: "var(--accent)",
-              color: "var(--text-primary)",
-            }}
+            className="mb-10 border-l-[3px] pl-4 text-2xl font-bold tracking-tight sm:text-3xl"
+            style={{ borderColor: "var(--accent)", color: "var(--text-primary)" }}
           >
-            Sobre mi
+            Sobre m&iacute;
           </h2>
         </motion.div>
 
-        <div className="space-y-6">
+        <div className="space-y-5">
           {aboutParagraphs.map((paragraph, i) => (
             <motion.p
               key={i}
-              className="text-base leading-relaxed"
+              className="text-[15px] leading-relaxed sm:text-base"
               style={{ color: "var(--text-secondary)" }}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.4, delay: i * 0.1 },
-                },
-              }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
             >
               {paragraph}
             </motion.p>

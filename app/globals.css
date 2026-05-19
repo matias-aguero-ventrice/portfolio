@@ -6,12 +6,9 @@
    =================================================== */
 
 @theme {
-  /* Colores de acento */
   --color-accent: #ea580c;
   --color-accent-hover: #f97316;
   --color-accent-dark-hover: #c2410c;
-
-  /* Fuentes configuradas desde layout.tsx */
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
@@ -21,35 +18,31 @@
   color-scheme: dark;
   --background: #0a0a0a;
   --surface: #18181b;
+  --surface-alt: #111113;
   --border: #27272a;
+  --border-hover: #3f3f46;
   --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
   --accent: #ea580c;
   --accent-hover: #f97316;
+  --accent-glow: rgba(234, 88, 12, 0.15);
+  --accent-subtle: rgba(234, 88, 12, 0.08);
 }
 
-/* Light mode */
-[data-theme="light"] {
-  color-scheme: light;
-  --background: #ffffff;
-  --surface: #fafafa;
-  --border: #e4e4e7;
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --accent: #ea580c;
-  --accent-hover: #c2410c;
-}
-
-/* next-themes usa class strategy por default */
+/* Light mode via next-themes class strategy */
 .light {
   color-scheme: light;
   --background: #ffffff;
-  --surface: #fafafa;
+  --surface: #f4f4f5;
+  --surface-alt: #fafafa;
   --border: #e4e4e7;
+  --border-hover: #d4d4d8;
   --text-primary: #18181b;
   --text-secondary: #52525b;
   --accent: #ea580c;
   --accent-hover: #c2410c;
+  --accent-glow: rgba(234, 88, 12, 0.1);
+  --accent-subtle: rgba(234, 88, 12, 0.05);
 }
 
 /* ===================================================
@@ -64,31 +57,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Scroll suave solo si el usuario no prefiere reducir movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Scrollbar sutil */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
 
-/* Scroll suave para los anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Seleccion con acento naranja */
 ::selection {
-  background-color: #ea580c40;
+  background-color: rgba(234, 88, 12, 0.3);
   color: var(--text-primary);
+}
+
+/* ===================================================
+   Utilidades custom
+   =================================================== */
+
+/* Seccion con fondo alternado para crear ritmo visual */
+.section-alt {
+  background-color: var(--surface-alt);
+}
+
+/* Glow naranja sutil para elementos destacados */
+.accent-glow {
+  box-shadow: 0 0 60px var(--accent-glow), 0 0 120px var(--accent-subtle);
+}
+
+/* Borde que se ilumina en hover */
+.border-glow-hover {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.border-glow-hover:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px var(--accent-subtle);
 }
