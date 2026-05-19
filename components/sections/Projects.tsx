@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { TiltCard } from "@/components/TiltCard";
+import { SpotlightCard } from "@/components/SpotlightCard";
+import { TextScramble } from "@/components/TextScramble";
 import { projects } from "@/lib/data";
 import type { Project } from "@/lib/data";
 
@@ -17,6 +19,7 @@ const badgeColors = {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <TiltCard className="h-full">
+    <SpotlightCard className="h-full">
     <motion.article
       className="border-glow-hover group relative flex h-full flex-col overflow-hidden rounded-xl border p-5 sm:p-6"
       style={{
@@ -114,6 +117,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </a>
       )}
     </motion.article>
+    </SpotlightCard>
     </TiltCard>
   );
 }
@@ -130,7 +134,7 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          Proyectos destacados
+          <TextScramble text="Proyectos destacados" />
         </motion.h2>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

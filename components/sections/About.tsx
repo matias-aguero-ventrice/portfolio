@@ -1,7 +1,58 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Globe } from "lucide-react";
 import { aboutParagraphs } from "@/lib/data";
+import { TextScramble } from "@/components/TextScramble";
+
+const languages = [
+  { name: "Espa\u00f1ol", level: "Nativo", percent: 100 },
+  { name: "Ingl\u00e9s", level: "B1", percent: 45 },
+];
+
+function LanguageBars() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="mt-8 rounded-xl border p-5"
+      style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, delay: 0.3 }}
+    >
+      <div className="mb-4 flex items-center gap-2">
+        <Globe className="h-4 w-4" style={{ color: "var(--accent)" }} />
+        <h3 className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
+          Idiomas
+        </h3>
+      </div>
+      <div className="space-y-3">
+        {languages.map((lang) => (
+          <div key={lang.name}>
+            <div className="mb-1 flex items-center justify-between text-sm">
+              <span style={{ color: "var(--text-primary)" }}>{lang.name}</span>
+              <span style={{ color: "var(--text-secondary)" }}>{lang.level}</span>
+            </div>
+            <div className="h-1.5 w-full overflow-hidden rounded-full" style={{ backgroundColor: "var(--border)" }}>
+              <motion.div
+                className="h-full rounded-full"
+                style={{ backgroundColor: "var(--accent)" }}
+                initial={{ width: 0 }}
+                animate={isInView ? { width: `${lang.percent}%` } : {}}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
 
 export function About() {
   return (
@@ -17,7 +68,7 @@ export function About() {
             className="mb-8 border-l-[3px] pl-4 text-2xl font-bold tracking-tight sm:text-3xl"
             style={{ borderColor: "var(--accent)", color: "var(--text-primary)" }}
           >
-            Sobre m&iacute;
+            <TextScramble text="Sobre m&#xed;" />
           </h2>
         </motion.div>
 
@@ -36,6 +87,8 @@ export function About() {
             </motion.p>
           ))}
         </div>
+
+        <LanguageBars />
       </div>
     </section>
   );

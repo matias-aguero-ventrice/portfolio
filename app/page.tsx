@@ -11,13 +11,16 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CommandPalette } from "@/components/CommandPalette";
 import { SectionDivider } from "@/components/SectionDivider";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { PageLoader } from "@/components/PageLoader";
 
 export default function Home() {
   return (
-    <>
+    <PageLoader>
       <ScrollProgress />
       <CursorGlow />
       <CommandPalette />
+      <ScrollToTop />
       <Navbar />
       <main>
         <Hero />
@@ -35,6 +38,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </PageLoader>
   );
 }

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { stackCategories } from "@/lib/data";
 import { iconMap } from "@/lib/icons";
 import { SimpleIcon } from "@/components/SimpleIcon";
+import { TextScramble } from "@/components/TextScramble";
 
 export function Stack() {
   return (
@@ -17,7 +18,7 @@ export function Stack() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          Stack t&eacute;cnico
+          <TextScramble text="Stack t&#xe9;cnico" />
         </motion.h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

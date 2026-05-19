@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { TextScramble } from "@/components/TextScramble";
 import { experiences } from "@/lib/data";
 
 export function Experience() {
@@ -16,7 +17,7 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          Experiencia profesional
+          <TextScramble text="Experiencia profesional" />
         </motion.h2>
 
         {/* Timeline */}

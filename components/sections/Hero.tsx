@@ -4,7 +4,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
 import { TypingText } from "@/components/TypingText";
+import { MagneticButton } from "@/components/MagneticButton";
+import { GridBackground } from "@/components/GridBackground";
 import { personalInfo } from "@/lib/data";
+
+/* Colores de marca para hover de iconos sociales */
+const socialBrandColors: Record<string, string> = {
+  GitHub: "var(--text-primary)",
+  LinkedIn: "#0A66C2",
+  Email: "var(--accent)",
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -24,6 +33,11 @@ const stagger = {
 export function Hero() {
   return (
     <section className="relative flex min-h-svh w-full items-center overflow-hidden px-4 pt-16 pb-12 sm:px-6 lg:px-8">
+      {/* Grid interactivo de fondo */}
+      <div className="pointer-events-auto absolute inset-0 hidden md:block">
+        <GridBackground />
+      </div>
+
       {/* Glow decorativo de fondo */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -84,8 +98,7 @@ export function Hero() {
           </motion.div>
 
           <motion.h1
-            className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
-            style={{ color: "var(--text-primary)" }}
+            className="animated-gradient mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
             variants={fadeUp}
           >
             {personalInfo.displayName}
@@ -116,34 +129,35 @@ export function Hero() {
             <span>{personalInfo.location}</span>
           </motion.div>
 
-          {/* CTAs */}
+          {/* CTAs con efecto magnético */}
           <motion.div
             className="mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
             variants={fadeUp}
           >
-            <a
-              href="#contacto"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all hover:brightness-110 sm:w-auto"
-              style={{ backgroundColor: "var(--accent)" }}
-            >
-              Contactame
-            </a>
-            <a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-glow-hover inline-flex w-full items-center justify-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-colors sm:w-auto"
-              style={{
-                borderColor: "var(--border)",
-                color: "var(--text-primary)",
-              }}
-            >
-              <Download className="h-4 w-4" />
-              Descargar CV
-            </a>
+            <MagneticButton className="w-full sm:w-auto">
+              <a
+                href="#contacto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all hover:brightness-110 sm:w-auto"
+                style={{ backgroundColor: "var(--accent)" }}
+              >
+                Contactame
+              </a>
+            </MagneticButton>
+            <MagneticButton className="w-full sm:w-auto">
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-glow-hover inline-flex w-full items-center justify-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-colors sm:w-auto"
+                style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+              >
+                <Download className="h-4 w-4" />
+                Descargar CV
+              </a>
+            </MagneticButton>
           </motion.div>
 
-          {/* Iconos sociales */}
+          {/* Iconos sociales con brand colors en hover */}
           <motion.div
             className="mt-6 flex items-center gap-1"
             variants={fadeUp}
@@ -153,17 +167,20 @@ export function Hero() {
               { icon: Linkedin, href: personalInfo.linkedinUrl, label: "LinkedIn", external: true },
               { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email", external: false },
             ].map(({ icon: Icon, href, label, external }) => (
-              <a
-                key={label}
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                aria-label={label}
-                className="rounded-lg p-2.5 transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                <Icon className="h-5 w-5" />
-              </a>
+              <MagneticButton key={label} strength={0.4}>
+                <a
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="group rounded-lg p-2.5 transition-colors hover:bg-[var(--surface)]"
+                  style={{ color: "var(--text-secondary)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = socialBrandColors[label])}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              </MagneticButton>
             ))}
           </motion.div>
         </motion.div>

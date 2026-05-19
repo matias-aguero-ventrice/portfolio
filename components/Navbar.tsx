@@ -4,14 +4,36 @@ import { useEffect, useState } from "react";
 import { navLinks, personalInfo } from "@/lib/data";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-/* Navbar sticky que aparece con fondo al scrollear */
+/* Navbar con scroll spy - resalta la sección visible */
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
+
+    /* Scroll spy con IntersectionObserver */
+    const observers: IntersectionObserver[] = [];
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observers.forEach((obs) => obs.disconnect());
+    };
   }, []);
 
   return (
@@ -27,7 +49,6 @@ export function Navbar() {
         }}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          {/* Logo / nombre */}
           <a
             href="#"
             className="text-sm font-bold tracking-tight transition-colors hover:text-[var(--accent)]"
@@ -37,21 +58,28 @@ export function Navbar() {
             <span className="hidden sm:inline">{personalInfo.shortName}</span>
           </a>
 
-          {/* Links de navegacion - solo desktop */}
           <div className="hidden items-center gap-1 md:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace("#", "");
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="relative rounded-md px-3 py-1.5 text-sm transition-colors hover:text-[var(--accent)]"
+                  style={{ color: isActive ? "var(--accent)" : "var(--text-secondary)" }}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-1/2 h-[2px] w-4 -translate-x-1/2 rounded-full"
+                      style={{ backgroundColor: "var(--accent)" }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
-          {/* Ctrl+K hint + Theme toggle */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true }))}
