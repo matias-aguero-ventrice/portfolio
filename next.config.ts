@@ -18,6 +18,7 @@ const securityHeaders = [
       "img-src 'self' data: blob:",
       "font-src 'self' data:",
       "connect-src 'self' https://api.web3forms.com https://api.github.com",
+      "object-src 'self'",
       "frame-ancestors 'none'",
     ].join("; "),
   },
