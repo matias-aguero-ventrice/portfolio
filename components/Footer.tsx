@@ -9,11 +9,10 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="w-full border-t px-4 py-8 sm:px-6 lg:px-8" style={{ borderColor: "var(--border)" }}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <p className="text-center text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
-          &copy; {new Date().getFullYear()} {personalInfo.displayName}. Hecho con Next.js,
-          Tailwind y mucho mate desde San Juan.
+    <footer className="w-full border-t px-4 py-6 sm:px-6 lg:px-8" style={{ borderColor: "var(--border)" }}>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 sm:flex-row sm:justify-between">
+        <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
+          {personalInfo.displayName}
         </p>
 
         <div className="flex items-center gap-1">
