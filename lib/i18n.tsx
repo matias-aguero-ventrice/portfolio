@@ -118,8 +118,8 @@ const es = {
     items: [
       {
         quote: "Cuando arranc\u00f3, no ten\u00edamos CRM. En dos meses ten\u00edamos un sistema que centraliz\u00f3 toda la operaci\u00f3n: leads, propiedades, corredores, cobranzas. Hoy no podr\u00edamos operar sin lo que construy\u00f3.",
-        author: "Equipo de Direcci\u00f3n",
-        role: "TuMatch Inmobiliario \u2014 Grupo Propital, Chile",
+        author: "Patricio Rojas",
+        role: "Gerente \u2014 TuMatch Inmobiliario, Grupo Propital",
       },
       {
         quote: "Le ped\u00ed una pieza 3D custom con medidas espec\u00edficas, me mand\u00f3 un render antes de imprimir para confirmar, y lleg\u00f3 exacta. Adem\u00e1s me sugiri\u00f3 un material mejor para lo que necesitaba. Volv\u00ed a comprarle tres veces.",
@@ -290,8 +290,8 @@ const en: Translations = {
     items: [
       {
         quote: "When he started, we had no CRM. Within two months we had a system that centralized the entire operation: leads, properties, brokers, billing. Today we couldn't operate without what he built.",
-        author: "Management Team",
-        role: "TuMatch Inmobiliario \u2014 Grupo Propital, Chile",
+        author: "Patricio Rojas",
+        role: "Manager \u2014 TuMatch Inmobiliario, Grupo Propital",
       },
       {
         quote: "I asked for a custom 3D piece with specific measurements, he sent me a render before printing to confirm, and it arrived exact. He also suggested a better material for my use case. I've bought from him three times since.",
