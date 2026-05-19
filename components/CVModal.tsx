@@ -63,7 +63,7 @@ function CVModalPortal({ open, onClose }: { open: boolean; onClose: () => void }
             </div>
 
             <iframe
-              src="/cv.pdf"
+              src="https://docs.google.com/viewer?url=https://matiasaguero.dev/cv.pdf&embedded=true"
               className="w-full flex-1"
               title="CV"
               style={{ border: "none" }}
