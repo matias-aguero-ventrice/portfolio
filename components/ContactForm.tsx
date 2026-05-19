@@ -6,7 +6,7 @@ import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
 /* Formulario que envía mensajes reales a tu email via Web3Forms.
    Registrate gratis en web3forms.com y reemplazá el access_key. */
-const WEB3FORMS_KEY = "TU_ACCESS_KEY_ACA";
+const WEB3FORMS_KEY = "20ea88a1-e6a2-4778-ac53-a5f98de85e30";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
