@@ -6,7 +6,7 @@
 /* --- Datos personales --- */
 export const personalInfo = {
   fullName: "Matías Valentín Agüero Ventrice",
-  displayName: "Matías Agüero Ventrice",
+  displayName: "Matías Valentín Agüero Ventrice",
   shortName: "Maty Agüero",
   initials: "MA",
   headline: "Junior Full-Stack Developer & Coordinador Ejecutivo",
