@@ -17,18 +17,18 @@ const siteUrl = "https://matiasaguero.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
+  title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Head of Product & Operations",
   description:
-    "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase, apalancado en herramientas de IA. Coordinador Ejecutivo en TuMatch Inmobiliario.",
+    "Head of Product & Operations en Grupo Propital, basado en San Juan, Argentina. Lidero producto y operaciones para TuMatch/Orkezto y Numinap, construyendo con Next.js, React, TypeScript y Supabase apalancado en herramientas de IA.",
   keywords: [
-    "developer",
-    "full-stack",
+    "head of product",
+    "product manager",
+    "full-stack developer",
     "next.js",
     "react",
     "typescript",
     "san juan",
     "argentina",
-    "junior developer",
     "ai-augmented",
   ],
   authors: [{ name: "Matias Aguero Ventrice" }],
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: siteUrl,
     siteName: "Matias Aguero Ventrice",
-    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
+    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Head of Product & Operations",
     description:
-      "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase.",
+      "Head of Product & Operations en Grupo Propital, basado en San Juan, Argentina. Lidero producto y operaciones para TuMatch/Orkezto y Numinap con Next.js, React, TypeScript y Supabase.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Junior Full-Stack Developer",
+    title: "Mat\u00edas Ag\u00fcero Ventrice \u2014 Head of Product & Operations",
     description:
-      "Developer junior basado en San Juan, Argentina. Construyo productos digitales con Next.js, React, TypeScript y Supabase.",
+      "Head of Product & Operations en Grupo Propital, basado en San Juan, Argentina. Lidero producto y operaciones para TuMatch/Orkezto y Numinap con Next.js, React, TypeScript y Supabase.",
     images: ["/opengraph-image"],
   },
 };
@@ -59,7 +59,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Matias Valentin Aguero Ventrice",
-  jobTitle: "Junior Full-Stack Developer",
+  jobTitle: "Head of Product & Operations",
   address: {
     "@type": "PostalAddress",
     addressLocality: "San Juan",

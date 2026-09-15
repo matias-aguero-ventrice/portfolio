@@ -38,12 +38,20 @@ export function Projects() {
       metrics: [
         { label: t.projects.crm.metrics.leads, value: "+7.600" },
         { label: t.projects.crm.metrics.properties, value: "+3.600" },
-        { label: t.projects.crm.metrics.production, value: "+5" },
+        { label: t.projects.crm.metrics.production, value: "+2 años" },
         { label: t.projects.crm.metrics.apis, value: "6" },
         { label: t.projects.crm.metrics.sales, value: "+40%" },
         { label: t.projects.crm.metrics.record, value: "$6.3M" },
       ],
       tags: ["Next.js", "TypeScript", "Supabase", "Python", "APIs REST"],
+      footer: t.projects.confidential,
+    },
+    {
+      title: "Numinap × TuMatch",
+      subtitle: t.projects.numinapIntegration.subtitle,
+      description: t.projects.numinapIntegration.description,
+      badge: { text: t.projects.badges.production, color: "green" },
+      tags: ["Next.js", "Supabase", "APIs REST", "Product Strategy"],
       footer: t.projects.confidential,
     },
     {

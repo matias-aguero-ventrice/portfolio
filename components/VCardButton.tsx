@@ -15,8 +15,8 @@ function generateVCard(): string {
     `TEL;TYPE=CELL:${personalInfo.whatsapp}`,
     `URL:https://matiasaguero.dev`,
     `ADR;TYPE=HOME:;;;;;;San Juan;Argentina`,
-    `TITLE:Junior Full-Stack Developer`,
-    `ORG:TuMatch Inmobiliario`,
+    `TITLE:Head of Product & Operations`,
+    `ORG:Grupo Propital`,
     "END:VCARD",
   ].join("\n");
 }
