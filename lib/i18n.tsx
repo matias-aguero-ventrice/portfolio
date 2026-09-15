@@ -27,6 +27,7 @@ const es = {
     paragraphs: [
       "Empec\u00e9 como developer construyendo sistemas reales apalancado en herramientas de IA \u2014 hoy lidero producto y operaciones para todo Grupo Propital, combinando estrategia, arquitectura y ejecuci\u00f3n t\u00e9cnica. Mi formaci\u00f3n de base es T\u00e9cnico Electr\u00f3nico, con estudios parciales en Tecnicatura Universitaria en Programaci\u00f3n en la UNSJ.",
       "Como Head of Product & Operations coordino TuMatch/Orkezto (el CRM inmobiliario que dise\u00f1\u00e9 e implement\u00e9 desde cero, hoy en producci\u00f3n hace m\u00e1s de dos a\u00f1os) y Numinap, la app de planificaci\u00f3n patrimonial del grupo. Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n cross-producto entre ambas plataformas, adem\u00e1s del modelo white-label multi-marca que sostiene TuMatch y Orkezto sobre la misma base de c\u00f3digo.",
+      "Tambi\u00e9n contribuyo con producto e ingenier\u00eda en el resto del ecosistema de Grupo Propital: Propirent (gesti\u00f3n de propiedades para inversionistas inmobiliarios) y Orvyt (plataforma inmobiliaria multi-tenant para Latinoam\u00e9rica), donde impuls\u00e9 integraciones de pago (MercadoPago, Stripe), mensajer\u00eda (Twilio) y un m\u00f3dulo de postventa. Adem\u00e1s dise\u00f1\u00e9 la integraci\u00f3n que conecta Propirent con Numinap: el flujo de caja de las propiedades administradas se refleja autom\u00e1ticamente en el patrimonio del inversionista.",
       "En paralelo dirijo Made In 3D, mi emprendimiento personal de manufactura aditiva, donde combino dise\u00f1o, producci\u00f3n y atenci\u00f3n directa al cliente.",
     ],
     languages: "Idiomas",
@@ -46,8 +47,12 @@ const es = {
       },
     },
     numinapIntegration: {
-      subtitle: "Integraci\u00f3n cross-producto entre CRM inmobiliario y planificaci\u00f3n patrimonial",
-      description: "Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n entre Numinap (planificaci\u00f3n patrimonial) y TuMatch/Orkezto (CRM inmobiliario): un corredor comparte su link de referido de Numinap con sus clientes, y los leads inmobiliarios calificados que genera Numinap entran directo al inbox de leads de Orkezto.",
+      subtitle: "Integraciones cross-producto entre Numinap, TuMatch/Orkezto y Propirent",
+      description: "Dise\u00f1\u00e9 e impuls\u00e9 las integraciones que conectan Numinap (planificaci\u00f3n patrimonial) con el resto del ecosistema: un corredor de TuMatch/Orkezto comparte su link de referido con clientes, y Propirent emite autom\u00e1ticamente el flujo de caja de las propiedades administradas hacia el patrimonio del inversionista en Numinap.",
+    },
+    orvyt: {
+      subtitle: "Plataforma inmobiliaria multi-tenant para Latinoam\u00e9rica",
+      description: "Contribu\u00ed features de producto: integraciones de pago (MercadoPago, Stripe), mensajer\u00eda (Twilio WhatsApp/SMS), un m\u00f3dulo de postventa (tickets, entregas, garant\u00edas) y dark mode completo para el CRM.",
     },
     made3d: {
       subtitle: "Manufactura aditiva e impresi\u00f3n 3D",
@@ -69,14 +74,14 @@ const es = {
     remote: "Remoto (Chile, desde Argentina)",
     entries: [
       {
-        company: "Grupo Propital (TuMatch, Orkezto & Numinap)",
+        company: "Grupo Propital",
         role: "Head of Product & Operations",
         period: "Julio 2024 \u2014 Presente",
         modality: "Remoto (Chile, desde Argentina)",
         achievements: [
-          "Lidero producto y operaciones para TuMatch/Orkezto (CRM inmobiliario) y Numinap (planificaci\u00f3n patrimonial)",
+          "Lidero producto y operaciones para el ecosistema de Grupo Propital: TuMatch/Orkezto (CRM inmobiliario), Numinap (planificaci\u00f3n patrimonial), Propirent (gesti\u00f3n de propiedades) y Orvyt (plataforma inmobiliaria multi-tenant)",
           "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch/Orkezto, en producci\u00f3n hace m\u00e1s de dos a\u00f1os",
-          "Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n cross-producto Numinap \u2194 TuMatch/Orkezto y el modelo white-label multi-marca",
+          "Dise\u00f1\u00e9 e impuls\u00e9 las integraciones cross-producto que conectan Numinap con TuMatch/Orkezto y con Propirent, y el modelo white-label multi-marca de TuMatch/Orkezto",
           "Coordinaci\u00f3n administrativa, financiera, contable y legal",
           "Gesti\u00f3n de red de +150 corredores activos",
           "R\u00e9cord hist\u00f3rico de recaudaci\u00f3n: $6.3M CLP \u00b7 +40% en ventas de membres\u00edas \u00b7 ahorro operativo > $1.800.000 CLP",
@@ -204,6 +209,7 @@ const en: Translations = {
     paragraphs: [
       "I started out as a developer building real systems leveraging AI tools — today I lead product and operations for all of Grupo Propital, combining strategy, architecture, and hands-on execution. My background is in Electronic Engineering, with partial studies in a Programming degree at UNSJ.",
       "As Head of Product & Operations I coordinate TuMatch/Orkezto (the real-estate CRM I designed and built from scratch, in production for over two years) and Numinap, the group's wealth-planning app. I designed and drove the cross-product integration between both platforms, on top of the multi-brand white-label model that runs TuMatch and Orkezto off the same codebase.",
+      "I also contribute product and engineering work across the rest of Grupo Propital's ecosystem: Propirent (property management for real-estate investors) and Orvyt (a multi-tenant real-estate platform for Latin America), where I drove payment integrations (MercadoPago, Stripe), messaging (Twilio), and an after-sales module. I also designed the integration connecting Propirent to Numinap: the cash flow of managed properties automatically reflects in the investor's net worth.",
       "In parallel, I run Made In 3D, my personal additive manufacturing venture, where I combine design, production, and direct customer service.",
     ],
     languages: "Languages",
@@ -223,8 +229,12 @@ const en: Translations = {
       },
     },
     numinapIntegration: {
-      subtitle: "Cross-product integration between real-estate CRM and wealth planning",
-      description: "I designed and drove the integration between Numinap (wealth planning) and TuMatch/Orkezto (real-estate CRM): a broker shares their Numinap referral link with clients, and qualified real-estate leads generated by Numinap flow directly into Orkezto's lead inbox.",
+      subtitle: "Cross-product integrations between Numinap, TuMatch/Orkezto, and Propirent",
+      description: "I designed and drove the integrations connecting Numinap (wealth planning) to the rest of the ecosystem: a TuMatch/Orkezto broker shares their referral link with clients, and Propirent automatically emits the cash flow of managed properties into the investor's net worth in Numinap.",
+    },
+    orvyt: {
+      subtitle: "Multi-tenant real-estate platform for Latin America",
+      description: "I contributed product features: payment integrations (MercadoPago, Stripe), messaging (Twilio WhatsApp/SMS), an after-sales module (tickets, deliveries, warranties), and a full dark mode for the CRM.",
     },
     made3d: {
       subtitle: "Additive manufacturing & 3D printing",
@@ -246,14 +256,14 @@ const en: Translations = {
     remote: "Remote (Chile, from Argentina)",
     entries: [
       {
-        company: "Grupo Propital (TuMatch, Orkezto & Numinap)",
+        company: "Grupo Propital",
         role: "Head of Product & Operations",
         period: "July 2024 \u2014 Present",
         modality: "Remote (Chile, from Argentina)",
         achievements: [
-          "Lead product and operations for TuMatch/Orkezto (real-estate CRM) and Numinap (wealth planning)",
+          "Lead product and operations for Grupo Propital's ecosystem: TuMatch/Orkezto (real-estate CRM), Numinap (wealth planning), Propirent (property management), and Orvyt (multi-tenant real-estate platform)",
           "Designed and built the CRM that runs TuMatch/Orkezto from scratch, in production for over two years",
-          "Designed and drove the Numinap \u2194 TuMatch/Orkezto cross-product integration and the multi-brand white-label model",
+          "Designed and drove the cross-product integrations connecting Numinap to TuMatch/Orkezto and to Propirent, and TuMatch/Orkezto's multi-brand white-label model",
           "Administrative, financial, accounting, and legal coordination",
           "Management of a network of 150+ active brokers",
           "All-time revenue record: $6.3M CLP \u00b7 +40% in membership sales \u00b7 operational savings > $1,800,000 CLP",
