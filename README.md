@@ -67,22 +67,40 @@ Tambien actualiza los valores de `--accent` y `--accent-hover` en los bloques `:
 
 ## Agregar un nuevo proyecto
 
-Edita el array `projects` en `lib/data.ts`:
+El contenido de cara al usuario (headline, about, proyectos, experiencia, educación,
+testimonios) vive en `lib/i18n.tsx` (bloques `es`/`en`), no en `lib/data.ts` — es la
+única fuente que los componentes de `sections/` leen de verdad, porque soporta ES/EN.
+
+1. Agrega las claves `subtitle`/`description` del proyecto en `lib/i18n.tsx`, dentro de
+   `projects` (en ambos bloques `es` y `en`).
+2. Agrega la card en el array `projects` de `components/sections/Projects.tsx`
+   (título, referencia a las claves de `t.projects.*`, badge, tags y, opcional,
+   `metrics`/`link`/`footer`).
 
 ```typescript
-{
-  title: "Nombre del proyecto",
+// lib/i18n.tsx (dentro de projects, en es y en)
+miProyecto: {
   subtitle: "Una linea descriptiva",
   description: "Descripcion de 2-3 lineas.",
-  badge: { text: "Estado", color: "green" }, // green | orange | zinc
+},
+
+// components/sections/Projects.tsx
+{
+  title: "Nombre del proyecto",
+  subtitle: t.projects.miProyecto.subtitle,
+  description: t.projects.miProyecto.description,
+  badge: { text: t.projects.badges.production, color: "green" }, // green | orange | zinc
   tags: ["Tech1", "Tech2"],
   // Opcionales:
   metrics: [{ label: "metrica", value: "+100" }],
-  image: "/projects/imagen.jpg",
-  link: { text: "Ver mas", url: "https://..." },
-  footer: "Texto al pie de la card",
+  link: { text: t.projects.viewCode, url: "https://..." },
+  footer: t.projects.confidential,
 }
 ```
+
+`lib/data.ts` solo trae lo que los componentes importan directo: datos
+personales/contacto (Hero, Footer, Navbar, Contact, VCardButton, CommandPalette,
+GitHubStats), el stack técnico (`Stack.tsx`) y los links de navegación (`Navbar.tsx`).
 
 ## Estructura
 
@@ -102,7 +120,8 @@ components/
   ThemeProvider.tsx   - Wrapper de next-themes
   SimpleIcon.tsx      - Renderizador de Simple Icons
 lib/
-  data.ts             - Datos del CV centralizados
+  i18n.tsx            - Contenido de cara al usuario (ES/EN) - fuente de verdad
+  data.ts             - Datos personales/contacto, stack técnico y nav links
   icons.ts            - Mapa de Simple Icons
   utils.ts            - cn() helper
 ```

@@ -16,8 +16,8 @@ const es = {
   },
   hero: {
     badge: "Disponible para nuevas oportunidades",
-    headline: "Junior Full-Stack Developer & Coordinador Ejecutivo",
-    subHeadline: "Construyo productos digitales con un enfoque AI-augmented",
+    headline: "Head of Product & Operations",
+    subHeadline: "Lidero producto y operaciones en Grupo Propital con un enfoque AI-augmented",
     cta1: "Contactame",
     cta2: "Descargar CV",
     viewCv: "Ver CV",
@@ -25,8 +25,8 @@ const es = {
   about: {
     title: "Sobre m\u00ed",
     paragraphs: [
-      "Soy un developer junior con un enfoque particular: construyo sistemas reales apalancado en herramientas de IA, mientras yo me ocupo del dise\u00f1o, la integraci\u00f3n entre componentes y las decisiones de arquitectura. Mi formaci\u00f3n de base es T\u00e9cnico Electr\u00f3nico, con estudios parciales en Tecnicatura Universitaria en Programaci\u00f3n en la UNSJ.",
-      "Actualmente coordino la operaci\u00f3n administrativa y el desarrollo web interno en TuMatch Inmobiliario (Grupo Propital), una proptech chilena. Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera la compa\u00f1\u00eda, en producci\u00f3n hace m\u00e1s de cinco meses, gestionando miles de leads, propiedades y corredores activos.",
+      "Empec\u00e9 como developer construyendo sistemas reales apalancado en herramientas de IA \u2014 hoy lidero producto y operaciones para todo Grupo Propital, combinando estrategia, arquitectura y ejecuci\u00f3n t\u00e9cnica. Mi formaci\u00f3n de base es T\u00e9cnico Electr\u00f3nico, con estudios parciales en Tecnicatura Universitaria en Programaci\u00f3n en la UNSJ.",
+      "Como Head of Product & Operations coordino TuMatch/Orkezto (el CRM inmobiliario que dise\u00f1\u00e9 e implement\u00e9 desde cero, hoy en producci\u00f3n hace m\u00e1s de dos a\u00f1os) y Numinap, la app de planificaci\u00f3n patrimonial del grupo. Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n cross-producto entre ambas plataformas, adem\u00e1s del modelo white-label multi-marca que sostiene TuMatch y Orkezto sobre la misma base de c\u00f3digo.",
       "En paralelo dirijo Made In 3D, mi emprendimiento personal de manufactura aditiva, donde combino dise\u00f1o, producci\u00f3n y atenci\u00f3n directa al cliente.",
     ],
     languages: "Idiomas",
@@ -38,12 +38,16 @@ const es = {
     confidential: "Screenshots y demo bajo pedido por confidencialidad",
     badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source" },
     crm: {
-      subtitle: "Sistema CRM corporativo para proptech chilena",
-      description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch Inmobiliario. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
+      subtitle: "Sistema CRM corporativo multi-marca (TuMatch & Orkezto)",
+      description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch e impulsa su marca white-label Orkezto. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
       metrics: {
         leads: "leads", properties: "propiedades", production: "en producci\u00f3n",
         apis: "APIs integradas", sales: "ventas membres\u00edas", record: "CLP r\u00e9cord",
       },
+    },
+    numinapIntegration: {
+      subtitle: "Integraci\u00f3n cross-producto entre CRM inmobiliario y planificaci\u00f3n patrimonial",
+      description: "Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n entre Numinap (planificaci\u00f3n patrimonial) y TuMatch/Orkezto (CRM inmobiliario): un corredor comparte su link de referido de Numinap con sus clientes, y los leads inmobiliarios calificados que genera Numinap entran directo al inbox de leads de Orkezto.",
     },
     made3d: {
       subtitle: "Manufactura aditiva e impresi\u00f3n 3D",
@@ -65,17 +69,18 @@ const es = {
     remote: "Remoto (Chile, desde Argentina)",
     entries: [
       {
-        company: "TuMatch Inmobiliario (Grupo Propital)",
-        role: "Coordinador Ejecutivo & Desarrollador Web Interno",
+        company: "Grupo Propital (TuMatch, Orkezto & Numinap)",
+        role: "Head of Product & Operations",
         period: "Julio 2024 \u2014 Presente",
         modality: "Remoto (Chile, desde Argentina)",
         achievements: [
-          "Dise\u00f1o e implementaci\u00f3n del CRM interno de la compa\u00f1\u00eda",
+          "Lidero producto y operaciones para TuMatch/Orkezto (CRM inmobiliario) y Numinap (planificaci\u00f3n patrimonial)",
+          "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch/Orkezto, en producci\u00f3n hace m\u00e1s de dos a\u00f1os",
+          "Dise\u00f1\u00e9 e impuls\u00e9 la integraci\u00f3n cross-producto Numinap \u2194 TuMatch/Orkezto y el modelo white-label multi-marca",
           "Coordinaci\u00f3n administrativa, financiera, contable y legal",
           "Gesti\u00f3n de red de +150 corredores activos",
-          "R\u00e9cord hist\u00f3rico de recaudaci\u00f3n: $6.3M CLP",
-          "+40% en ventas de membres\u00edas",
-          "Ahorro operativo > $1.800.000 CLP",
+          "R\u00e9cord hist\u00f3rico de recaudaci\u00f3n: $6.3M CLP \u00b7 +40% en ventas de membres\u00edas \u00b7 ahorro operativo > $1.800.000 CLP",
+          "Revisi\u00f3n de arquitectura y seguridad en features cr\u00edticas (firma electr\u00f3nica, RLS multi-tenant)",
           "Supervisi\u00f3n de alumno en pr\u00e1ctica",
         ],
       },
@@ -130,7 +135,7 @@ const es = {
   },
   contact: {
     title: "Trabajemos juntos",
-    subtitle: "Disponible para oportunidades junior/semi-senior en tech, modalidad remota o presencial en San Juan. Respondo todos los mensajes en menos de 24 horas.",
+    subtitle: "Disponible para conversar sobre producto, tecnología y operaciones — remoto o presencial en San Juan. Respondo todos los mensajes en menos de 24 horas.",
     scanQr: "Escane\u00e1 el QR para hablarme por WhatsApp",
     saveContact: "Guardar contacto",
     downloadVcard: "Descargar vCard",
@@ -188,8 +193,8 @@ const en: Translations = {
   },
   hero: {
     badge: "Open to new opportunities",
-    headline: "Junior Full-Stack Developer & Executive Coordinator",
-    subHeadline: "I build digital products with an AI-augmented approach",
+    headline: "Head of Product & Operations",
+    subHeadline: "I lead product and operations at Grupo Propital with an AI-augmented approach",
     cta1: "Contact me",
     cta2: "Download CV",
     viewCv: "View CV",
@@ -197,8 +202,8 @@ const en: Translations = {
   about: {
     title: "About me",
     paragraphs: [
-      "I'm a junior developer with a particular approach: I build real systems leveraging AI tools, while I handle the design, component integration, and architecture decisions. My background is in Electronic Engineering, with partial studies in a Programming degree at UNSJ.",
-      "I currently coordinate the administrative operations and internal web development at TuMatch Inmobiliario (Grupo Propital), a Chilean proptech. I designed and implemented the company's CRM from scratch, in production for over five months, managing thousands of leads, properties, and active brokers.",
+      "I started out as a developer building real systems leveraging AI tools — today I lead product and operations for all of Grupo Propital, combining strategy, architecture, and hands-on execution. My background is in Electronic Engineering, with partial studies in a Programming degree at UNSJ.",
+      "As Head of Product & Operations I coordinate TuMatch/Orkezto (the real-estate CRM I designed and built from scratch, in production for over two years) and Numinap, the group's wealth-planning app. I designed and drove the cross-product integration between both platforms, on top of the multi-brand white-label model that runs TuMatch and Orkezto off the same codebase.",
       "In parallel, I run Made In 3D, my personal additive manufacturing venture, where I combine design, production, and direct customer service.",
     ],
     languages: "Languages",
@@ -210,12 +215,16 @@ const en: Translations = {
     confidential: "Screenshots and demo available upon request due to confidentiality",
     badges: { production: "In production", startup: "Startup", openSource: "Open source" },
     crm: {
-      subtitle: "Corporate CRM system for Chilean proptech",
-      description: "I designed and built from scratch the CRM that runs TuMatch Inmobiliario. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
+      subtitle: "Multi-brand corporate CRM system (TuMatch & Orkezto)",
+      description: "I designed and built from scratch the CRM that runs TuMatch and powers its white-label brand Orkezto. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
       metrics: {
         leads: "leads", properties: "properties", production: "in production",
         apis: "APIs integrated", sales: "membership sales", record: "CLP record",
       },
+    },
+    numinapIntegration: {
+      subtitle: "Cross-product integration between real-estate CRM and wealth planning",
+      description: "I designed and drove the integration between Numinap (wealth planning) and TuMatch/Orkezto (real-estate CRM): a broker shares their Numinap referral link with clients, and qualified real-estate leads generated by Numinap flow directly into Orkezto's lead inbox.",
     },
     made3d: {
       subtitle: "Additive manufacturing & 3D printing",
@@ -237,17 +246,18 @@ const en: Translations = {
     remote: "Remote (Chile, from Argentina)",
     entries: [
       {
-        company: "TuMatch Inmobiliario (Grupo Propital)",
-        role: "Executive Coordinator & Internal Web Developer",
+        company: "Grupo Propital (TuMatch, Orkezto & Numinap)",
+        role: "Head of Product & Operations",
         period: "July 2024 \u2014 Present",
         modality: "Remote (Chile, from Argentina)",
         achievements: [
-          "Design and implementation of the company's internal CRM",
+          "Lead product and operations for TuMatch/Orkezto (real-estate CRM) and Numinap (wealth planning)",
+          "Designed and built the CRM that runs TuMatch/Orkezto from scratch, in production for over two years",
+          "Designed and drove the Numinap \u2194 TuMatch/Orkezto cross-product integration and the multi-brand white-label model",
           "Administrative, financial, accounting, and legal coordination",
           "Management of a network of 150+ active brokers",
-          "All-time revenue record: $6.3M CLP",
-          "+40% in membership sales",
-          "Operational savings > $1,800,000 CLP",
+          "All-time revenue record: $6.3M CLP \u00b7 +40% in membership sales \u00b7 operational savings > $1,800,000 CLP",
+          "Architecture and security review on critical features (e-signature, multi-tenant RLS)",
           "Internship student supervision",
         ],
       },
@@ -302,7 +312,7 @@ const en: Translations = {
   },
   contact: {
     title: "Let's work together",
-    subtitle: "Available for junior/mid-level tech opportunities, remote or on-site in San Juan. I reply to all messages within 24 hours.",
+    subtitle: "Open to conversations about product, technology, and operations — remote or on-site in San Juan. I reply to all messages within 24 hours.",
     scanQr: "Scan the QR to reach me on WhatsApp",
     saveContact: "Save contact",
     downloadVcard: "Download vCard",

@@ -24,7 +24,7 @@ export function EasterEggs() {
       " | |  | |/ ___ \\\n" +
       " |_|  |_/_/   \\_\\\n\n" +
       " Matias Valentin Aguero Ventrice\n" +
-      " Junior Full-Stack Developer\n\n" +
+      " Head of Product & Operations\n\n" +
       " Si estas leyendo esto, probablemente\n" +
       " te interesa el codigo.\n" +
       " github.com/matias-aguero-ventrice/portfolio\n\n" +

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Matias Aguero Ventrice - Junior Full-Stack Developer";
+export const alt = "Matias Aguero Ventrice - Head of Product & Operations";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -92,7 +92,7 @@ export default async function OGImage() {
               color: "#a1a1aa",
             }}
           >
-            Junior Full-Stack Developer & Coordinador Ejecutivo
+            Head of Product & Operations
           </div>
 
           <div

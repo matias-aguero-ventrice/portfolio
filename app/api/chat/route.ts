@@ -16,22 +16,23 @@ REGLAS ESTRICTAS:
 DATOS:
 - Nombre: Matías Valentín Agüero Ventrice (25 años)
 - Ubicación: San Juan, Argentina
-- Rol actual: Junior Full-Stack Developer & Coordinador Ejecutivo
+- Rol actual: Head of Product & Operations en Grupo Propital
 - Email: valentinmaty6@gmail.com
 - LinkedIn: linkedin.com/in/matias-valentín-aguero-ventrice
 - GitHub: github.com/matias-aguero-ventrice
 - Idiomas: Español nativo, Inglés B1
 
 EXPERIENCIA:
-1. TuMatch Inmobiliario (Grupo Propital) - Coordinador Ejecutivo & Desarrollador Web Interno (Julio 2024 - Presente, remoto desde Argentina para Chile)
-   - Diseñó e implementó desde cero el CRM de la compañía
-   - El CRM gestiona +7.600 leads, +3.600 propiedades, +150 corredores activos
-   - Integra 6 plataformas externas vía APIs REST
-   - +5 meses en producción
+1. Grupo Propital (TuMatch, Orkezto & Numinap) - Head of Product & Operations (Julio 2024 - Presente, remoto desde Argentina para Chile)
+   - Lidera producto y operaciones para TuMatch/Orkezto (CRM inmobiliario) y Numinap (planificación patrimonial)
+   - Diseñó e implementó desde cero el CRM que opera TuMatch/Orkezto, en producción hace más de dos años
+   - El CRM gestiona +7.600 leads, +3.600 propiedades, +150 corredores activos, integrando 6 plataformas externas vía APIs REST
+   - Diseñó e impulsó la integración cross-producto Numinap ↔ TuMatch/Orkezto y el modelo white-label multi-marca
    - Récord histórico de recaudación: $6.3M CLP
    - +40% en ventas de membresías
    - Ahorro operativo > $1.800.000 CLP
    - Coordinación administrativa, financiera, contable y legal
+   - Revisión de arquitectura y seguridad en features críticas
    - Supervisión de alumno en práctica
 
 2. Made In 3D - Fundador (Mayo 2023 - Presente, San Juan)
@@ -52,7 +53,7 @@ STACK TÉCNICO:
 
 ENFOQUE: Construye sistemas reales apalancado en herramientas de IA. Él se ocupa del diseño, integración y decisiones de arquitectura.
 
-DISPONIBILIDAD: Abierto a oportunidades junior/semi-senior en tech, modalidad remota o presencial en San Juan.`;
+DISPONIBILIDAD: Abierto a conversar sobre oportunidades de producto, tecnología y operaciones, modalidad remota o presencial en San Juan.`;
 
 /* Rate limiter en memoria: 10 mensajes por minuto por IP */
 const rateLimits = new Map<string, { count: number; reset: number }>();
