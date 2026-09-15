@@ -47,11 +47,19 @@ export function Projects() {
       footer: t.projects.confidential,
     },
     {
-      title: "Numinap × TuMatch",
+      title: "Integraciones Numinap",
       subtitle: t.projects.numinapIntegration.subtitle,
       description: t.projects.numinapIntegration.description,
       badge: { text: t.projects.badges.production, color: "green" },
       tags: ["Next.js", "Supabase", "APIs REST", "Product Strategy"],
+      footer: t.projects.confidential,
+    },
+    {
+      title: "Orvyt",
+      subtitle: t.projects.orvyt.subtitle,
+      description: t.projects.orvyt.description,
+      badge: { text: t.projects.badges.production, color: "green" },
+      tags: ["Next.js", "TypeScript", "Supabase", "Stripe", "MercadoPago"],
       footer: t.projects.confidential,
     },
     {

@@ -23,11 +23,12 @@ DATOS:
 - Idiomas: Español nativo, Inglés B1
 
 EXPERIENCIA:
-1. Grupo Propital (TuMatch, Orkezto & Numinap) - Head of Product & Operations (Julio 2024 - Presente, remoto desde Argentina para Chile)
-   - Lidera producto y operaciones para TuMatch/Orkezto (CRM inmobiliario) y Numinap (planificación patrimonial)
+1. Grupo Propital - Head of Product & Operations (Julio 2024 - Presente, remoto desde Argentina para Chile)
+   - Lidera producto y operaciones para todo el ecosistema de Grupo Propital: TuMatch/Orkezto (CRM inmobiliario), Numinap (planificación patrimonial), Propirent (gestión de propiedades) y Orvyt (plataforma inmobiliaria multi-tenant)
    - Diseñó e implementó desde cero el CRM que opera TuMatch/Orkezto, en producción hace más de dos años
    - El CRM gestiona +7.600 leads, +3.600 propiedades, +150 corredores activos, integrando 6 plataformas externas vía APIs REST
-   - Diseñó e impulsó la integración cross-producto Numinap ↔ TuMatch/Orkezto y el modelo white-label multi-marca
+   - Diseñó e impulsó las integraciones cross-producto que conectan Numinap con TuMatch/Orkezto y con Propirent (el flujo de caja de las propiedades se refleja en el patrimonio del inversionista), y el modelo white-label multi-marca de TuMatch/Orkezto
+   - En Orvyt (plataforma inmobiliaria multi-tenant) impulsó integraciones de pago (MercadoPago, Stripe), mensajería (Twilio) y un módulo de postventa
    - Récord histórico de recaudación: $6.3M CLP
    - +40% en ventas de membresías
    - Ahorro operativo > $1.800.000 CLP
