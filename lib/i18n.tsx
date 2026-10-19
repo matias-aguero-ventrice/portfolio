@@ -43,7 +43,7 @@ const es = {
       description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch e impulsa su marca white-label Orkezto. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
       metrics: {
         leads: "leads", properties: "propiedades", production: "en producci\u00f3n",
-        apis: "APIs integradas", sales: "ventas membres\u00edas", record: "CLP r\u00e9cord",
+        apis: "APIs integradas", sales: "ventas membres\u00edas", record: "CLP r\u00e9cord de recaudaci\u00f3n",
       },
     },
     numinapIntegration: {
@@ -229,7 +229,7 @@ const en: Translations = {
       description: "I designed and built from scratch the CRM that runs TuMatch and powers its white-label brand Orkezto. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
       metrics: {
         leads: "leads", properties: "properties", production: "in production",
-        apis: "APIs integrated", sales: "membership sales", record: "CLP record",
+        apis: "APIs integrated", sales: "membership sales", record: "CLP revenue record",
       },
     },
     numinapIntegration: {
