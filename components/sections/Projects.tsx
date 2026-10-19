@@ -73,8 +73,9 @@ export function Projects() {
       title: "MiSUPER",
       subtitle: t.projects.misuper.subtitle,
       description: t.projects.misuper.description,
-      badge: { text: t.projects.badges.personal, color: "zinc" },
-      tags: ["Next.js", "Supabase"],
+      badge: { text: t.projects.badges.production, color: "green" },
+      tags: ["Next.js", "React Native / Expo", "TypeScript", "Supabase / PostgreSQL", "Mercado Pago", "ARCA", "Playwright"],
+      link: { text: t.projects.misuper.viewSite, url: "https://www.misuper.ar" },
     },
     {
       title: "Portfolio",

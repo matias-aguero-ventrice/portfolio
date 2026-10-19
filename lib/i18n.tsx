@@ -37,7 +37,7 @@ const es = {
     title: "Proyectos destacados",
     viewCode: "Ver c\u00f3digo",
     confidential: "Screenshots y demo bajo pedido por confidencialidad",
-    badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source", personal: "Proyecto propio" },
+    badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source" },
     crm: {
       subtitle: "Sistema CRM corporativo multi-marca (TuMatch & Orkezto)",
       description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch e impulsa su marca white-label Orkezto. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
@@ -59,8 +59,9 @@ const es = {
       description: "Emprendimiento personal desde mayo 2023. Dise\u00f1o, producci\u00f3n, atenci\u00f3n al cliente, marketing y administraci\u00f3n integral. Trabajo con clientes finales y comercios.",
     },
     misuper: {
-      subtitle: "Gesti\u00f3n para kioscos",
-      description: "MiSUPER: app de gesti\u00f3n para kioscos, hecha con Next.js y Supabase.",
+      subtitle: "Sistema de gesti\u00f3n para comercios de barrio",
+      description: "Punto de venta, caja, stock, fiado y facturaci\u00f3n electr\u00f3nica ARCA para kioscos, almacenes y verduler\u00edas, con panel web, app de celular y portal para proveedores. Sigue vendiendo sin internet.",
+      viewSite: "Ver sitio",
     },
     site: {
       subtitle: "Portfolio profesional",
@@ -223,7 +224,7 @@ const en: Translations = {
     title: "Featured projects",
     viewCode: "View code",
     confidential: "Screenshots and demo available upon request due to confidentiality",
-    badges: { production: "In production", startup: "Startup", openSource: "Open source", personal: "Side project" },
+    badges: { production: "In production", startup: "Startup", openSource: "Open source" },
     crm: {
       subtitle: "Multi-brand corporate CRM system (TuMatch & Orkezto)",
       description: "I designed and built from scratch the CRM that runs TuMatch and powers its white-label brand Orkezto. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
@@ -245,8 +246,9 @@ const en: Translations = {
       description: "Personal venture since May 2023. Design, production, customer service, marketing, and full administration. Working with end clients and businesses.",
     },
     misuper: {
-      subtitle: "Kiosk management",
-      description: "MiSUPER: management app for kiosks, built with Next.js and Supabase.",
+      subtitle: "Management system for neighborhood shops",
+      description: "Point of sale, cash register, stock, store credit and ARCA electronic invoicing for kiosks, grocery stores and greengrocers, with a web dashboard, mobile app and supplier portal. Keeps selling offline.",
+      viewSite: "View site",
     },
     site: {
       subtitle: "Professional portfolio",
