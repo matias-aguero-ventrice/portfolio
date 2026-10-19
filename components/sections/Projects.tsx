@@ -70,6 +70,13 @@ export function Projects() {
       tags: ["3D Design", "Production", "Marketing"],
     },
     {
+      title: "MiSUPER",
+      subtitle: t.projects.misuper.subtitle,
+      description: t.projects.misuper.description,
+      badge: { text: t.projects.badges.personal, color: "zinc" },
+      tags: ["Next.js", "Supabase"],
+    },
+    {
       title: "Portfolio",
       subtitle: t.projects.site.subtitle,
       description: t.projects.site.description,

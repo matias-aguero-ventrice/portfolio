@@ -18,7 +18,7 @@ DATOS:
 - Ubicación: San Juan, Argentina
 - Rol actual: Head of Product & Operations en Grupo Propital
 - Email: valentinmaty6@gmail.com
-- LinkedIn: linkedin.com/in/matias-valentín-aguero-ventrice
+- LinkedIn: linkedin.com/in/matias-aguero-ventrice
 - GitHub: github.com/matias-aguero-ventrice
 - Idiomas: Español nativo, Inglés B1
 
