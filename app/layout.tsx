@@ -68,7 +68,7 @@ const jsonLd = {
   email: "valentinmaty6@gmail.com",
   url: siteUrl,
   sameAs: [
-    "https://linkedin.com/in/matias-valent%C3%ADn-aguero-ventrice",
+    "https://www.linkedin.com/in/matias-aguero-ventrice",
     "https://github.com/matias-aguero-ventrice",
   ],
 };
