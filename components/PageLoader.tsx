@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from "react";
    ============================================================================ */
 
 const NAME = "MATÍAS AGÜERO VENTRICE";
-const ROLE = "COORDINADOR & DESARROLLADOR WEB";
+const ROLE = "HEAD OF PRODUCT & OPERATIONS";
 const SCRAMBLE_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&";
 const MONO = "var(--font-geist-mono), ui-monospace, monospace";
