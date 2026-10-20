@@ -62,6 +62,21 @@ const es = {
       subtitle: "Sistema de gesti\u00f3n para comercios de barrio",
       description: "Punto de venta, caja, stock, fiado y facturaci\u00f3n electr\u00f3nica ARCA para kioscos, almacenes y verduler\u00edas, con panel web, app de celular y portal para proveedores. Sigue vendiendo sin internet.",
       viewSite: "Ver sitio",
+      featured: "Destacado",
+      highlights: [
+        "Vende sin internet y no cobra dos veces: cada venta lleva una referencia \u00fanica",
+        "Factura en ARCA (ex AFIP) con comprobantes A, B y C, y nota de cr\u00e9dito autom\u00e1tica al anular",
+        "91 migraciones y m\u00e1s de 3.700 tests autom\u00e1ticos; datos aislados por negocio y sucursal",
+      ],
+      slides: [
+        "Punto de venta: cobro r\u00e1pido con escaneo y stock a la vista",
+        "Caja: turno, gastos y corte en un solo lugar",
+        "Inventario: stock, costos y m\u00e1rgenes por producto",
+        "Portal del proveedor: pedidos de sus clientes",
+        "Pedidos por WhatsApp interpretados autom\u00e1ticamente",
+      ],
+      prev: "Imagen anterior",
+      next: "Imagen siguiente",
     },
     site: {
       subtitle: "Portfolio profesional",
@@ -249,6 +264,21 @@ const en: Translations = {
       subtitle: "Management system for neighborhood shops",
       description: "Point of sale, cash register, stock, store credit and ARCA electronic invoicing for kiosks, grocery stores and greengrocers, with a web dashboard, mobile app and supplier portal. Keeps selling offline.",
       viewSite: "View site",
+      featured: "Featured",
+      highlights: [
+        "Sells offline without charging twice: every sale carries a unique reference",
+        "Invoices through ARCA (ex AFIP) with A, B and C receipts, and automatic credit notes on cancellation",
+        "91 migrations and 3,700+ automated tests; data isolated per business and branch",
+      ],
+      slides: [
+        "Point of sale: fast checkout with scanning and live stock",
+        "Cash register: shift, expenses and closing in one place",
+        "Inventory: stock, costs and margins per product",
+        "Supplier portal: orders from its customers",
+        "WhatsApp orders parsed automatically",
+      ],
+      prev: "Previous image",
+      next: "Next image",
     },
     site: {
       subtitle: "Professional portfolio",

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { TiltCard } from "@/components/TiltCard";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { TextScramble } from "@/components/TextScramble";
 import { useI18n } from "@/lib/i18n";
@@ -23,6 +24,13 @@ type ProjectData = {
   tags: string[];
   footer?: string;
   link?: { text: string; url: string };
+  featured?: {
+    label: string;
+    highlights: string[];
+    slides: { src: string; alt: string }[];
+    prevLabel: string;
+    nextLabel: string;
+  };
 };
 
 export function Projects() {
@@ -30,6 +38,24 @@ export function Projects() {
 
   /* Construimos las cards desde las traducciones */
   const projects: ProjectData[] = [
+    {
+      title: "MiSUPER",
+      subtitle: t.projects.misuper.subtitle,
+      description: t.projects.misuper.description,
+      badge: { text: t.projects.badges.production, color: "green" },
+      tags: ["Next.js", "React Native / Expo", "TypeScript", "Supabase / PostgreSQL", "Mercado Pago", "ARCA", "Playwright"],
+      link: { text: t.projects.misuper.viewSite, url: "https://www.misuper.ar" },
+      featured: {
+        label: t.projects.misuper.featured,
+        highlights: t.projects.misuper.highlights,
+        slides: ["pos", "caja", "inventario", "proveedor-pedidos", "proveedor-whatsapp"].map((name, i) => ({
+          src: `/misuper/${name}.webp`,
+          alt: t.projects.misuper.slides[i],
+        })),
+        prevLabel: t.projects.misuper.prev,
+        nextLabel: t.projects.misuper.next,
+      },
+    },
     {
       title: "CRM TuMatch",
       subtitle: t.projects.crm.subtitle,
@@ -70,14 +96,6 @@ export function Projects() {
       tags: ["3D Design", "Production", "Marketing"],
     },
     {
-      title: "MiSUPER",
-      subtitle: t.projects.misuper.subtitle,
-      description: t.projects.misuper.description,
-      badge: { text: t.projects.badges.production, color: "green" },
-      tags: ["Next.js", "React Native / Expo", "TypeScript", "Supabase / PostgreSQL", "Mercado Pago", "ARCA", "Playwright"],
-      link: { text: t.projects.misuper.viewSite, url: "https://www.misuper.ar" },
-    },
-    {
       title: "Portfolio",
       subtitle: t.projects.site.subtitle,
       description: t.projects.site.description,
@@ -103,7 +121,7 @@ export function Projects() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
-            <TiltCard key={project.title} className="h-full">
+            <TiltCard key={project.title} className={`h-full ${project.featured ? "sm:col-span-2 lg:col-span-3" : ""}`}>
             <SpotlightCard className="h-full">
             <motion.article
               className="border-glow-hover group relative flex h-full flex-col overflow-hidden rounded-xl border p-5 sm:p-6"
@@ -113,6 +131,53 @@ export function Projects() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
+              {project.featured ? (
+                <div className="grid gap-6 lg:grid-cols-5">
+                  <div className="lg:col-span-3">
+                    <ProjectCarousel
+                      slides={project.featured.slides}
+                      prevLabel={project.featured.prevLabel}
+                      nextLabel={project.featured.nextLabel}
+                    />
+                  </div>
+                  <div className="flex flex-col lg:col-span-2">
+                    <span className="mb-3 w-fit rounded-full border px-2.5 py-0.5 text-xs font-medium" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
+                      {project.featured.label}
+                    </span>
+                    <div className="mb-4 flex items-start justify-between gap-2">
+                      <div>
+                        <h3 className="text-lg font-semibold" style={{ color: "var(--text-primary)" }}>{project.title}</h3>
+                        <p className="mt-0.5 text-sm" style={{ color: "var(--text-secondary)" }}>{project.subtitle}</p>
+                      </div>
+                      <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeColors[project.badge.color]}`}>
+                        {project.badge.text}
+                      </span>
+                    </div>
+
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{project.description}</p>
+                    <ul className="mt-4 space-y-2 text-sm" style={{ color: "var(--text-primary)" }}>
+                      {project.featured.highlights.map((line) => (
+                        <li key={line} className="flex gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: "var(--accent)" }} />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="rounded-md px-2 py-0.5 text-xs" style={{ backgroundColor: "var(--background)", color: "var(--text-secondary)" }}>{tag}</span>
+                      ))}
+                    </div>
+                    {project.link && (
+                      <a href={project.link.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 border-t pt-3 text-sm font-medium transition-colors hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
+                        {project.link.text}
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <>
               <div className="mb-4 flex items-start justify-between gap-2">
                 <div>
                   <h3 className="text-lg font-semibold" style={{ color: "var(--text-primary)" }}>{project.title}</h3>
@@ -150,6 +215,8 @@ export function Projects() {
                   {project.link.text}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </a>
+              )}
+                </>
               )}
             </motion.article>
             </SpotlightCard>
