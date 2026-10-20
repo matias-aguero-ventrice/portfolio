@@ -7,10 +7,13 @@ export function TiltCard({
   children,
   className = "",
   style,
+  disabled = false,
 }: {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
+  /* Sin inclinacion: para tarjetas grandes con texto largo que hay que poder leer */
+  disabled?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("perspective(800px) rotateX(0deg) rotateY(0deg)");
@@ -35,6 +38,10 @@ export function TiltCard({
   const handleMouseLeave = () => {
     setTransform("perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   };
+
+  if (disabled) {
+    return <div className={className} style={style}>{children}</div>;
+  }
 
   return (
     <div

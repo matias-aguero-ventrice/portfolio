@@ -121,7 +121,7 @@ export function Projects() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
-            <TiltCard key={project.title} className={`h-full ${project.featured ? "sm:col-span-2 lg:col-span-3" : ""}`}>
+            <TiltCard key={project.title} disabled={!!project.featured} className={`h-full ${project.featured ? "sm:col-span-2 lg:col-span-3" : ""}`}>
             <SpotlightCard className="h-full">
             <motion.article
               className="border-glow-hover group relative flex h-full flex-col overflow-hidden rounded-xl border p-5 sm:p-6"
