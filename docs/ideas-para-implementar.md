@@ -12,8 +12,8 @@ Estado: `[ ]` pendiente · `[x]` hecho · `[?]` falta una decisión o un dato.
 
 ## MiSUPER (proyecto destacado)
 Ya hay una tarjeta nueva en `main`. Falta subirla de nivel:
-- [?] Carrusel de capturas (recomendado) o tarjeta ancha con 2-3 capturas.
-- [ ] Copiar capturas optimizadas de `MiSUPER/apps/web/public/portada/` (punto de venta, caja, inventario, portal de proveedores, versión celular). Revisar las 16 antes de publicar; las de punto de venta y pedidos por WhatsApp usan datos de ejemplo.
+- [x] Carrusel de capturas en una tarjeta destacada de ancho completo (5 capturas de escritorio).
+- [x] Copiar capturas optimizadas de `MiSUPER/apps/web/public/portada/` (punto de venta, caja, inventario, portal de proveedores, versión celular). Revisar las 16 antes de publicar; las de punto de venta y pedidos por WhatsApp usan datos de ejemplo.
 - [?] Página propia `/proyectos/misuper` con la versión larga (venta sin internet sin cobrar doble, facturación ARCA, aislamiento por negocio y sucursal, Mercado Pago, API OpenAPI, tests y migraciones).
 - [?] Cifras verificables: comercios activos o ventas procesadas (solo si son reales). Conteo de tests y migraciones: las cuento yo desde el repo.
 
@@ -44,8 +44,8 @@ Ya hay una tarjeta nueva en `main`. Falta subirla de nivel:
 - Descartado: resumen genérico ("experiencia en React, Next.js, TypeScript…") y lista larga de demos pequeñas. El sitio actual muestra producto real y resultados.
 
 ## Del portafolio de Lucas Espinosa (lucasees.github.io/portfolio)
-- [ ] Tres líneas de resultado por proyecto, cada una con un dato concreto (ej. "1.747 registros · 5 tablas", "mejora del baseline 62,6%"). Para el sitio: la tarjeta de MiSUPER y la del CRM con datos verificables (tests, migraciones, integraciones, leads).
-- [ ] Insignia "Destacado" en 1-3 proyectos para guiar la mirada.
+- [x] (hecho en MiSUPER; falta el CRM) Tres líneas de resultado por proyecto, cada una con un dato concreto (ej. "1.747 registros · 5 tablas", "mejora del baseline 62,6%"). Para el sitio: la tarjeta de MiSUPER y la del CRM con datos verificables (tests, migraciones, integraciones, leads).
+- [x] (hecho en MiSUPER) Insignia "Destacado" en 1-3 proyectos para guiar la mirada.
 - [ ] Una línea que traduzca el resultado técnico a impacto de negocio.
 - Ya cubierto en este sitio: métricas en la tarjeta del CRM, descarga de CV, enlaces a LinkedIn y GitHub.
 - Descartado: formato de proyectos de datos con repositorio público por tarjeta. MiSUPER y los productos de Propital son privados.
