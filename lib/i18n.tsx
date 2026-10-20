@@ -153,8 +153,8 @@ const es = {
       },
       {
         quote: "Le ped\u00ed una pieza 3D custom con medidas espec\u00edficas, me mand\u00f3 un render antes de imprimir para confirmar, y lleg\u00f3 exacta. Adem\u00e1s me sugiri\u00f3 un material mejor para lo que necesitaba. Volv\u00ed a comprarle tres veces.",
-        author: "Facundo L\u00f3pez",
-        role: "Cliente recurrente \u2014 Made In 3D, San Juan",
+        author: "Mat\u00edas de la Rosa",
+        role: "Estudiante de Arquitectura \u2014 Made In 3D",
       },
     ],
   },
@@ -355,8 +355,8 @@ const en: Translations = {
       },
       {
         quote: "I asked for a custom 3D piece with specific measurements, he sent me a render before printing to confirm, and it arrived exact. He also suggested a better material for my use case. I've bought from him three times since.",
-        author: "Facundo L\u00f3pez",
-        role: "Returning customer \u2014 Made In 3D, San Juan",
+        author: "Mat\u00edas de la Rosa",
+        role: "Architecture student \u2014 Made In 3D",
       },
     ],
   },
