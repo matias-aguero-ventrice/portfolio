@@ -37,6 +37,12 @@ Ya hay una tarjeta nueva en `main`. Falta subirla de nivel:
 - [ ] Tarjeta de educación al lado de "Sobre mí".
 - Ya cubierto en este sitio: selector ES/EN, insignia de disponibilidad, botón de descargar CV, enlaces a GitHub y LinkedIn.
 
+## Del portafolio de Adrian Espindola (resume-espindola.vercel.app)
+- [ ] Franja de tecnologías en movimiento justo debajo del hero (marquee con bordes que se desvanecen). Ya existe `components/sections/Stack.tsx`; la franja sería un complemento corto, no un reemplazo.
+- [ ] Botón "Ver proyecto" en cada tarjeta, solo donde el enlace sea público.
+- Ya cubierto en este sitio: modo oscuro, selector ES/EN, insignia de disponibilidad, educación e idiomas.
+- Descartado: resumen genérico ("experiencia en React, Next.js, TypeScript…") y lista larga de demos pequeñas. El sitio actual muestra producto real y resultados.
+
 ## Ideas propias (de la revisión de LinkedIn)
 - [ ] Unificar nombre, cifras y viñetas entre el sitio, el CV y LinkedIn (mismo texto exacto).
 - [ ] Post Inspector de LinkedIn sobre `https://matiasaguero.dev` para refrescar la miniatura del Destacado (la hace el dueño).
