@@ -43,6 +43,13 @@ Ya hay una tarjeta nueva en `main`. Falta subirla de nivel:
 - Ya cubierto en este sitio: modo oscuro, selector ES/EN, insignia de disponibilidad, educación e idiomas.
 - Descartado: resumen genérico ("experiencia en React, Next.js, TypeScript…") y lista larga de demos pequeñas. El sitio actual muestra producto real y resultados.
 
+## Del portafolio de Lucas Espinosa (lucasees.github.io/portfolio)
+- [ ] Tres líneas de resultado por proyecto, cada una con un dato concreto (ej. "1.747 registros · 5 tablas", "mejora del baseline 62,6%"). Para el sitio: la tarjeta de MiSUPER y la del CRM con datos verificables (tests, migraciones, integraciones, leads).
+- [ ] Insignia "Destacado" en 1-3 proyectos para guiar la mirada.
+- [ ] Una línea que traduzca el resultado técnico a impacto de negocio.
+- Ya cubierto en este sitio: métricas en la tarjeta del CRM, descarga de CV, enlaces a LinkedIn y GitHub.
+- Descartado: formato de proyectos de datos con repositorio público por tarjeta. MiSUPER y los productos de Propital son privados.
+
 ## Ideas propias (de la revisión de LinkedIn)
 - [ ] Unificar nombre, cifras y viñetas entre el sitio, el CV y LinkedIn (mismo texto exacto).
 - [ ] Post Inspector de LinkedIn sobre `https://matiasaguero.dev` para refrescar la miniatura del Destacado (la hace el dueño).
