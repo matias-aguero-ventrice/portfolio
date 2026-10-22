@@ -19,6 +19,7 @@ type ProjectData = {
   title: string;
   subtitle: string;
   description: string;
+  role: string;
   badge: { text: string; color: "green" | "orange" | "zinc" };
   metrics?: { label: string; value: string }[];
   tags: string[];
@@ -33,8 +34,27 @@ type ProjectData = {
   };
 };
 
+/* Rol y stack con etiquetas mono en mayusculas, al estilo de ficha tecnica */
+function RolYStack({ role, roleLabel, tags }: { role: string; roleLabel: string; tags: string[] }) {
+  const labelStyle = { color: "var(--text-secondary)" } as const;
+  return (
+    <>
+      <div className="border-t pt-3" style={{ borderColor: "var(--border)" }}>
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em]" style={labelStyle}>{roleLabel}</p>
+        <p className="mt-1 text-xs font-medium" style={{ color: "var(--text-primary)" }}>{role}</p>
+      </div>
+      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em]" style={labelStyle}>Stack</p>
+      <div className="mt-1.5 flex flex-wrap gap-1.5">
+        {tags.map((tag) => (
+          <span key={tag} className="rounded-md px-2 py-0.5 text-xs" style={{ backgroundColor: "var(--background)", color: "var(--text-secondary)" }}>{tag}</span>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function Projects() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   /* Construimos las cards desde las traducciones */
   const projects: ProjectData[] = [
@@ -42,6 +62,7 @@ export function Projects() {
       title: "MiSUPER",
       subtitle: t.projects.misuper.subtitle,
       description: t.projects.misuper.description,
+      role: t.projects.misuper.role,
       badge: { text: t.projects.badges.production, color: "green" },
       tags: ["Next.js", "React Native / Expo", "TypeScript", "Supabase / PostgreSQL", "Mercado Pago", "ARCA", "Playwright"],
       link: { text: t.projects.misuper.viewSite, url: "https://www.misuper.ar" },
@@ -60,11 +81,12 @@ export function Projects() {
       title: "CRM TuMatch",
       subtitle: t.projects.crm.subtitle,
       description: t.projects.crm.description,
+      role: t.projects.crm.role,
       badge: { text: t.projects.badges.production, color: "green" },
       metrics: [
         { label: t.projects.crm.metrics.leads, value: "+7.600" },
         { label: t.projects.crm.metrics.properties, value: "+3.600" },
-        { label: t.projects.crm.metrics.production, value: "+2 años" },
+        { label: t.projects.crm.metrics.production, value: locale === "es" ? "+2 años" : "+2 years" },
         { label: t.projects.crm.metrics.apis, value: "6" },
         { label: t.projects.crm.metrics.sales, value: "+40%" },
         { label: t.projects.crm.metrics.record, value: "$6.3M" },
@@ -76,6 +98,7 @@ export function Projects() {
       title: "Integraciones Numinap",
       subtitle: t.projects.numinapIntegration.subtitle,
       description: t.projects.numinapIntegration.description,
+      role: t.projects.numinapIntegration.role,
       badge: { text: t.projects.badges.production, color: "green" },
       tags: ["Next.js", "Supabase", "APIs REST", "Product Strategy"],
       footer: t.projects.confidential,
@@ -84,6 +107,7 @@ export function Projects() {
       title: "Orvyt",
       subtitle: t.projects.orvyt.subtitle,
       description: t.projects.orvyt.description,
+      role: t.projects.orvyt.role,
       badge: { text: t.projects.badges.production, color: "green" },
       tags: ["Next.js", "TypeScript", "Supabase", "Stripe", "MercadoPago"],
       footer: t.projects.confidential,
@@ -92,6 +116,7 @@ export function Projects() {
       title: "Made In 3D",
       subtitle: t.projects.made3d.subtitle,
       description: t.projects.made3d.description,
+      role: t.projects.made3d.role,
       badge: { text: t.projects.badges.startup, color: "orange" },
       tags: ["3D Design", "Production", "Marketing"],
     },
@@ -99,6 +124,7 @@ export function Projects() {
       title: "Portfolio",
       subtitle: t.projects.site.subtitle,
       description: t.projects.site.description,
+      role: t.projects.site.role,
       badge: { text: t.projects.badges.openSource, color: "zinc" },
       tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui"],
       link: { text: t.projects.viewCode, url: "https://github.com/matias-aguero-ventrice/portfolio" },
@@ -163,10 +189,8 @@ export function Projects() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="rounded-md px-2 py-0.5 text-xs" style={{ backgroundColor: "var(--background)", color: "var(--text-secondary)" }}>{tag}</span>
-                      ))}
+                    <div className="mt-auto pt-5">
+                      <RolYStack role={project.role} roleLabel={t.projects.roleLabel} tags={project.tags} />
                     </div>
                     {project.link && (
                       <a href={project.link.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 border-t pt-3 text-sm font-medium transition-colors hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
@@ -201,10 +225,8 @@ export function Projects() {
                 </div>
               )}
 
-              <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-md px-2 py-0.5 text-xs" style={{ backgroundColor: "var(--background)", color: "var(--text-secondary)" }}>{tag}</span>
-                ))}
+              <div className="mt-auto pt-5">
+                <RolYStack role={project.role} roleLabel={t.projects.roleLabel} tags={project.tags} />
               </div>
 
               {project.footer && (

@@ -17,7 +17,7 @@ const es = {
   hero: {
     badge: "Disponible para nuevas oportunidades",
     headline: "Head of Product & Operations",
-    subHeadline: "Lidero producto y operaciones en Grupo Propital con un enfoque AI-augmented",
+    subHeadline: "Producto y operaciones, con profundidad t\u00e9cnica \u2014 en Grupo Propital",
     cta1: "Contactame",
     cta2: "Descargar CV",
     viewCv: "Ver CV",
@@ -34,11 +34,13 @@ const es = {
     native: "Nativo",
   },
   projects: {
+    roleLabel: "Rol",
     title: "Proyectos destacados",
     viewCode: "Ver c\u00f3digo",
     confidential: "Screenshots y demo bajo pedido por confidencialidad",
     badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source" },
     crm: {
+      role: "Responsable del repositorio \u00b7 m\u00e1s de 400 pull requests",
       subtitle: "Sistema CRM corporativo multi-marca (TuMatch & Orkezto)",
       description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch e impulsa su marca white-label Orkezto. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
       metrics: {
@@ -47,18 +49,22 @@ const es = {
       },
     },
     numinapIntegration: {
+      role: "Producto e IA (Numinap) \u00b7 contribuidor principal (Propirent)",
       subtitle: "Integraciones cross-producto entre Numinap, TuMatch/Orkezto y Propirent",
       description: "Dise\u00f1\u00e9 e impuls\u00e9 las integraciones que conectan Numinap (planificaci\u00f3n patrimonial) con el resto del ecosistema: un corredor de TuMatch/Orkezto comparte su link de referido con clientes, y Propirent emite autom\u00e1ticamente el flujo de caja de las propiedades administradas hacia el patrimonio del inversionista en Numinap.",
     },
     orvyt: {
+      role: "Desarrollador \u00fanico full-stack \u00b7 arquitectura desde cero",
       subtitle: "Plataforma inmobiliaria multi-tenant para Latinoam\u00e9rica",
-      description: "Contribu\u00ed features de producto: integraciones de pago (MercadoPago, Stripe), mensajer\u00eda (Twilio WhatsApp/SMS), un m\u00f3dulo de postventa (tickets, entregas, garant\u00edas) y dark mode completo para el CRM.",
+      description: "Dise\u00f1\u00e9 la arquitectura completa desde cero: multi-tenant, RLS, autenticaci\u00f3n, integraciones de pago (MercadoPago, Stripe) y mensajer\u00eda (Twilio WhatsApp/SMS). Sum\u00e9 un m\u00f3dulo de postventa (tickets, entregas, garant\u00edas) y dark mode completo para el CRM. Soy responsable \u00fanico de la seguridad y de las migraciones en producci\u00f3n.",
     },
     made3d: {
+      role: "Fundador y operador t\u00e9cnico",
       subtitle: "Manufactura aditiva e impresi\u00f3n 3D",
       description: "Emprendimiento personal desde mayo 2023. Dise\u00f1o, producci\u00f3n, atenci\u00f3n al cliente, marketing y administraci\u00f3n integral. Trabajo con clientes finales y comercios.",
     },
     misuper: {
+      role: "Dise\u00f1o y desarrollo en solitario",
       subtitle: "Sistema de gesti\u00f3n para comercios de barrio",
       description: "Punto de venta, caja, stock, fiado y facturaci\u00f3n electr\u00f3nica ARCA para kioscos, almacenes y verduler\u00edas, con panel web, app de celular y portal para proveedores. Sigue vendiendo sin internet.",
       viewSite: "Ver sitio",
@@ -79,6 +85,7 @@ const es = {
       next: "Imagen siguiente",
     },
     site: {
+      role: "Dise\u00f1o y desarrollo",
       subtitle: "Portfolio profesional",
       description: "Sitio que est\u00e1s viendo. Construido con Next.js 15, TypeScript, Tailwind CSS y shadcn/ui. Pensado mobile-first, con Lighthouse >95 en performance.",
     },
@@ -219,7 +226,7 @@ const en: Translations = {
   hero: {
     badge: "Open to new opportunities",
     headline: "Head of Product & Operations",
-    subHeadline: "I lead product and operations at Grupo Propital with an AI-augmented approach",
+    subHeadline: "Product and operations, with technical depth \u2014 at Grupo Propital",
     cta1: "Contact me",
     cta2: "Download CV",
     viewCv: "View CV",
@@ -236,11 +243,13 @@ const en: Translations = {
     native: "Native",
   },
   projects: {
+    roleLabel: "Role",
     title: "Featured projects",
     viewCode: "View code",
     confidential: "Screenshots and demo available upon request due to confidentiality",
     badges: { production: "In production", startup: "Startup", openSource: "Open source" },
     crm: {
+      role: "Repository owner \u00b7 400+ pull requests",
       subtitle: "Multi-brand corporate CRM system (TuMatch & Orkezto)",
       description: "I designed and built from scratch the CRM that runs TuMatch and powers its white-label brand Orkezto. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
       metrics: {
@@ -249,18 +258,22 @@ const en: Translations = {
       },
     },
     numinapIntegration: {
+      role: "Product & AI (Numinap) \u00b7 lead contributor (Propirent)",
       subtitle: "Cross-product integrations between Numinap, TuMatch/Orkezto, and Propirent",
       description: "I designed and drove the integrations connecting Numinap (wealth planning) to the rest of the ecosystem: a TuMatch/Orkezto broker shares their referral link with clients, and Propirent automatically emits the cash flow of managed properties into the investor's net worth in Numinap.",
     },
     orvyt: {
+      role: "Sole full-stack developer \u00b7 architecture from scratch",
       subtitle: "Multi-tenant real-estate platform for Latin America",
-      description: "I contributed product features: payment integrations (MercadoPago, Stripe), messaging (Twilio WhatsApp/SMS), an after-sales module (tickets, deliveries, warranties), and a full dark mode for the CRM.",
+      description: "I designed the full architecture from scratch: multi-tenant, RLS, authentication, payment integrations (MercadoPago, Stripe) and messaging (Twilio WhatsApp/SMS). I added an after-sales module (tickets, deliveries, warranties) and a full dark mode for the CRM. I am the sole owner of security and production migrations.",
     },
     made3d: {
+      role: "Founder and technical operator",
       subtitle: "Additive manufacturing & 3D printing",
       description: "Personal venture since May 2023. Design, production, customer service, marketing, and full administration. Working with end clients and businesses.",
     },
     misuper: {
+      role: "Solo design and development",
       subtitle: "Management system for neighborhood shops",
       description: "Point of sale, cash register, stock, store credit and ARCA electronic invoicing for kiosks, grocery stores and greengrocers, with a web dashboard, mobile app and supplier portal. Keeps selling offline.",
       viewSite: "View site",
@@ -281,6 +294,7 @@ const en: Translations = {
       next: "Next image",
     },
     site: {
+      role: "Design and development",
       subtitle: "Professional portfolio",
       description: "The site you're viewing. Built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui. Mobile-first, with Lighthouse >95 in performance.",
     },
