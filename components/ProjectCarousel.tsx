@@ -10,9 +10,10 @@ type Props = {
   slides: Slide[];
   prevLabel: string;
   nextLabel: string;
+  liveLabel: string;
 };
 
-export function ProjectCarousel({ slides, prevLabel, nextLabel }: Props) {
+export function ProjectCarousel({ slides, prevLabel, nextLabel, liveLabel }: Props) {
   const [index, setIndex] = useState(0);
   const go = (delta: number) => setIndex((i) => (i + delta + slides.length) % slides.length);
 
@@ -36,6 +37,24 @@ export function ProjectCarousel({ slides, prevLabel, nextLabel }: Props) {
             priority={i === 0}
           />
         ))}
+      </div>
+
+      {/* Marco con esquinas y etiquetas, al estilo de ficha tecnica */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        {[
+          "left-3 top-3 border-l border-t",
+          "right-3 top-3 border-r border-t",
+          "bottom-12 left-3 border-b border-l",
+          "bottom-12 right-3 border-b border-r",
+        ].map((pos) => (
+          <span key={pos} className={`absolute h-4 w-4 ${pos}`} style={{ borderColor: "var(--accent)" }} />
+        ))}
+        <span className="absolute left-7 top-3 font-mono text-[10px] tracking-[0.14em]" style={{ color: "var(--accent)" }}>
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="absolute right-7 top-3 font-mono text-[10px] uppercase tracking-[0.14em]" style={{ color: "var(--accent)" }}>
+          {liveLabel}
+        </span>
       </div>
 
       <button
