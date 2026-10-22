@@ -20,6 +20,8 @@ type ProjectData = {
   subtitle: string;
   description: string;
   role: string;
+  pill?: string;
+  highlights?: string[];
   badge: { text: string; color: "green" | "orange" | "zinc" };
   metrics?: { label: string; value: string }[];
   tags: string[];
@@ -82,6 +84,8 @@ export function Projects() {
       subtitle: t.projects.crm.subtitle,
       description: t.projects.crm.description,
       role: t.projects.crm.role,
+      pill: t.projects.crm.featured,
+      highlights: t.projects.crm.highlights,
       badge: { text: t.projects.badges.production, color: "green" },
       metrics: [
         { label: t.projects.crm.metrics.leads, value: "+7.600" },
@@ -202,6 +206,11 @@ export function Projects() {
                 </div>
               ) : (
                 <>
+              {project.pill && (
+                <span className="mb-3 w-fit rounded-full border px-2.5 py-0.5 text-xs font-medium" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
+                  {project.pill}
+                </span>
+              )}
               <div className="mb-4 flex items-start justify-between gap-2">
                 <div>
                   <h3 className="text-lg font-semibold" style={{ color: "var(--text-primary)" }}>{project.title}</h3>
@@ -223,6 +232,17 @@ export function Projects() {
                     </div>
                   ))}
                 </div>
+              )}
+
+              {project.highlights && (
+                <ul className="mt-4 space-y-2 text-sm" style={{ color: "var(--text-primary)" }}>
+                  {project.highlights.map((line) => (
+                    <li key={line} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: "var(--accent)" }} />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
               )}
 
               <div className="mt-auto pt-5">

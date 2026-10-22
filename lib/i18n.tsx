@@ -41,6 +41,12 @@ const es = {
     badges: { production: "En producci\u00f3n", startup: "Emprendimiento", openSource: "Open source" },
     crm: {
       role: "Responsable del repositorio \u00b7 m\u00e1s de 400 pull requests",
+      featured: "Destacado",
+      highlights: [
+        "Gestiona una red de m\u00e1s de 150 corredores activos, con una sola base de c\u00f3digo para dos marcas (TuMatch y Orkezto)",
+        "Seis plataformas externas integradas por API REST; incluye la integraci\u00f3n del portal TOCTOC y la conciliaci\u00f3n de pagos con MercadoPago",
+        "En producci\u00f3n hace m\u00e1s de dos a\u00f1os, con m\u00e1s de 400 pull requests integrados en el repositorio",
+      ],
       subtitle: "Sistema CRM corporativo multi-marca (TuMatch & Orkezto)",
       description: "Dise\u00f1\u00e9 e implement\u00e9 desde cero el CRM que opera TuMatch e impulsa su marca white-label Orkezto. Centraliza la operaci\u00f3n comercial de una red de corredores en Chile e integra seis plataformas externas v\u00eda APIs REST.",
       metrics: {
@@ -250,6 +256,12 @@ const en: Translations = {
     badges: { production: "In production", startup: "Startup", openSource: "Open source" },
     crm: {
       role: "Repository owner \u00b7 400+ pull requests",
+      featured: "Featured",
+      highlights: [
+        "Runs a network of 150+ active brokers, with one codebase serving two brands (TuMatch and Orkezto)",
+        "Six external platforms integrated through REST APIs; includes the TOCTOC portal integration and MercadoPago payment reconciliation",
+        "In production for over two years, with 400+ pull requests merged in the repository",
+      ],
       subtitle: "Multi-brand corporate CRM system (TuMatch & Orkezto)",
       description: "I designed and built from scratch the CRM that runs TuMatch and powers its white-label brand Orkezto. It centralizes the commercial operations of a broker network in Chile and integrates six external platforms via REST APIs.",
       metrics: {
