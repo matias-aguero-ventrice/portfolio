@@ -50,6 +50,13 @@ Ya hay una tarjeta nueva en `main`. Falta subirla de nivel:
 - Ya cubierto en este sitio: métricas en la tarjeta del CRM, descarga de CV, enlaces a LinkedIn y GitHub.
 - Descartado: formato de proyectos de datos con repositorio público por tarjeta. MiSUPER y los productos de Propital son privados.
 
+## Del portafolio de Matías Pekarek (next-portfolio-matiaspekarek.vercel.app)
+- [ ] Cada proyecto con dos datos fijos: **ROL** (qué hizo él, ej. "Arquitectura de producto · desarrollo full-stack") y **STACK PRINCIPAL**, más una insignia de estado honesta (EN VIVO / EN DESARROLLO / CONCEPTO). Para el sitio: ROL en la tarjeta del CRM, Orvyt, Numinap y MiSUPER (son los que más importan para un puesto de producto).
+- [ ] Titular de la presentación con una frase de valor y una palabra de acento (ej. "Producto y operaciones, con profundidad técnica"), en vez del cargo solo.
+- [ ] Texto que aclara el alcance real de cada proyecto ("el alcance real se indica con transparencia"). Encaja con los proyectos confidenciales de Propital.
+- [ ] Sección corta "Trabajemos juntos" con dos vías: equipos que contratan en remoto y proyectos a medida (Made In 3D, desarrollo por encargo). Decidir si aporta o distrae del objetivo de conseguir puesto.
+- Descartado: gráfico isométrico animado del hero (sirve a un perfil creativo, no a uno de producto) y proyectos con "capturas pendientes" (MiSUPER ya tiene capturas reales).
+
 ## Ideas propias (de la revisión de LinkedIn)
 - [ ] Unificar nombre, cifras y viñetas entre el sitio, el CV y LinkedIn (mismo texto exacto).
 - [ ] Post Inspector de LinkedIn sobre `https://matiasaguero.dev` para refrescar la miniatura del Destacado (la hace el dueño).
