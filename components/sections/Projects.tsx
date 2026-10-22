@@ -54,7 +54,7 @@ function RolYStack({ role, roleLabel, tags }: { role: string; roleLabel: string;
 }
 
 export function Projects() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   /* Construimos las cards desde las traducciones */
   const projects: ProjectData[] = [
@@ -86,7 +86,7 @@ export function Projects() {
       metrics: [
         { label: t.projects.crm.metrics.leads, value: "+7.600" },
         { label: t.projects.crm.metrics.properties, value: "+3.600" },
-        { label: t.projects.crm.metrics.production, value: "+2 años" },
+        { label: t.projects.crm.metrics.production, value: locale === "es" ? "+2 años" : "+2 years" },
         { label: t.projects.crm.metrics.apis, value: "6" },
         { label: t.projects.crm.metrics.sales, value: "+40%" },
         { label: t.projects.crm.metrics.record, value: "$6.3M" },

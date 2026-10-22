@@ -2,14 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { useI18n, type Locale } from "@/lib/i18n";
 
-/* Parsea strings como "+7.600", "$6.3M", "+40%", "+5 meses", "6" */
+/* Parsea strings como "+7.600", "$6.3M", "+40%", "+5 meses", "6".
+   Un punto seguido de exactamente 3 digitos es separador de miles ("7.600" = 7600),
+   no un decimal: leerlo como decimal mostraba "7,600" (siete coma seis). */
 function parseValue(raw: string): { prefix: string; number: number; suffix: string; decimals: number } {
   const match = raw.match(/^([+$]*)(\d+(?:[.,]\d+)?)(.*)$/);
   if (!match) return { prefix: "", number: 0, suffix: raw, decimals: 0 };
 
   const prefix = match[1];
-  const numStr = match[2].replace(",", ".");
+  const raw_num = match[2];
+  const esMiles = /^\d{1,3}(\.\d{3})+$/.test(raw_num);
+  const numStr = esMiles ? raw_num.replace(/\./g, "") : raw_num.replace(",", ".");
   const suffix = match[3];
   const number = parseFloat(numStr);
   const decPart = numStr.split(".")[1];
@@ -18,13 +23,13 @@ function parseValue(raw: string): { prefix: string; number: number; suffix: stri
   return { prefix, number, suffix, decimals };
 }
 
-/* Formatea el numero con punto como separador de miles (estilo argentino) */
-function formatNumber(n: number, decimals: number): string {
+/* Formatea segun el idioma: es = 7.600 / 6,3 (estilo argentino); en = 7,600 / 6.3 */
+function formatNumber(n: number, decimals: number, locale: Locale): string {
   if (decimals > 0) {
-    return n.toFixed(decimals).replace(".", ",");
+    const fixed = n.toFixed(decimals);
+    return locale === "es" ? fixed.replace(".", ",") : fixed;
   }
-  /* Separador de miles con punto */
-  return Math.round(n).toLocaleString("es-AR");
+  return Math.round(n).toLocaleString(locale === "es" ? "es-AR" : "en-US");
 }
 
 /* Contador que anima de 0 al valor final cuando entra en viewport */
@@ -39,6 +44,7 @@ export function AnimatedCounter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { locale } = useI18n();
   const [display, setDisplay] = useState("0");
   const { prefix, number, suffix, decimals } = parseValue(value);
 
@@ -55,7 +61,7 @@ export function AnimatedCounter({
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = number * eased;
 
-      setDisplay(prefix + formatNumber(current, decimals) + suffix);
+      setDisplay(prefix + formatNumber(current, decimals, locale) + suffix);
 
       if (progress < 1) {
         requestAnimationFrame(animate);
@@ -63,7 +69,7 @@ export function AnimatedCounter({
     }
 
     requestAnimationFrame(animate);
-  }, [isInView, number, prefix, suffix, decimals]);
+  }, [isInView, number, prefix, suffix, decimals, locale]);
 
   return (
     <span ref={ref} className={className} style={style}>

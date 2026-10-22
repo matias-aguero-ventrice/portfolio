@@ -56,7 +56,7 @@ const es = {
     orvyt: {
       role: "Desarrollador \u00fanico full-stack \u00b7 arquitectura desde cero",
       subtitle: "Plataforma inmobiliaria multi-tenant para Latinoam\u00e9rica",
-      description: "Contribu\u00ed features de producto: integraciones de pago (MercadoPago, Stripe), mensajer\u00eda (Twilio WhatsApp/SMS), un m\u00f3dulo de postventa (tickets, entregas, garant\u00edas) y dark mode completo para el CRM.",
+      description: "Dise\u00f1\u00e9 la arquitectura completa desde cero: multi-tenant, RLS, autenticaci\u00f3n, integraciones de pago (MercadoPago, Stripe) y mensajer\u00eda (Twilio WhatsApp/SMS). Sum\u00e9 un m\u00f3dulo de postventa (tickets, entregas, garant\u00edas) y dark mode completo para el CRM. Soy responsable \u00fanico de la seguridad y de las migraciones en producci\u00f3n.",
     },
     made3d: {
       role: "Fundador y operador t\u00e9cnico",
@@ -265,7 +265,7 @@ const en: Translations = {
     orvyt: {
       role: "Sole full-stack developer \u00b7 architecture from scratch",
       subtitle: "Multi-tenant real-estate platform for Latin America",
-      description: "I contributed product features: payment integrations (MercadoPago, Stripe), messaging (Twilio WhatsApp/SMS), an after-sales module (tickets, deliveries, warranties), and a full dark mode for the CRM.",
+      description: "I designed the full architecture from scratch: multi-tenant, RLS, authentication, payment integrations (MercadoPago, Stripe) and messaging (Twilio WhatsApp/SMS). I added an after-sales module (tickets, deliveries, warranties) and a full dark mode for the CRM. I am the sole owner of security and production migrations.",
     },
     made3d: {
       role: "Founder and technical operator",
