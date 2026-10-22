@@ -28,7 +28,8 @@ EXPERIENCIA:
    - Diseñó e implementó desde cero el CRM que opera TuMatch/Orkezto, en producción hace más de dos años
    - El CRM gestiona +7.600 leads, +3.600 propiedades, +150 corredores activos, integrando 6 plataformas externas vía APIs REST
    - Diseñó e impulsó las integraciones cross-producto que conectan Numinap con TuMatch/Orkezto y con Propirent (el flujo de caja de las propiedades se refleja en el patrimonio del inversionista), y el modelo white-label multi-marca de TuMatch/Orkezto
-   - En Orvyt (plataforma inmobiliaria multi-tenant) impulsó integraciones de pago (MercadoPago, Stripe), mensajería (Twilio) y un módulo de postventa
+   - En Orvyt (plataforma inmobiliaria multi-tenant) es el único desarrollador full-stack: diseñó la arquitectura completa desde cero (multi-tenant, RLS, autenticación), integró pagos (MercadoPago, Stripe) y mensajería (Twilio), sumó un módulo de postventa y es responsable único de la seguridad y las migraciones en producción
+   - En Propirent (gestión de propiedades) es contribuidor principal y diseñó la integración con Numinap
    - Récord histórico de recaudación: $6.3M CLP
    - +40% en ventas de membresías
    - Ahorro operativo > $1.800.000 CLP
