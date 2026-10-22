@@ -33,6 +33,19 @@ const es = {
     languages: "Idiomas",
     native: "Nativo",
   },
+  layers: {
+    title: "C\u00f3mo construyo",
+    intro: "Un producto son varias capas trabajando juntas. Esto es lo que cubro en cada una.",
+    kicker: "Capas del producto",
+    tag: "C\u00f3mo construyo \u00b7 01",
+    active: "Capa activa",
+    items: [
+      { name: "Interfaz", detail: "Estructura, jerarqu\u00eda y respuesta visual: la parte que el usuario toca.", tags: ["Next.js", "React", "TypeScript", "Tailwind", "Accesibilidad"] },
+      { name: "L\u00f3gica", detail: "Reglas de negocio, permisos y flujos: qu\u00e9 puede hacer cada rol y c\u00f3mo se calcula cada cosa.", tags: ["Roles y permisos", "Reglas de negocio", "Pruebas autom\u00e1ticas"] },
+      { name: "Datos", detail: "Multi-tenant con seguridad por fila: cada negocio ve solo lo suyo.", tags: ["Supabase", "PostgreSQL", "RLS", "Migraciones"] },
+      { name: "Integraciones", detail: "Pagos, mensajer\u00eda y facturaci\u00f3n electr\u00f3nica conectados al producto.", tags: ["MercadoPago", "Stripe", "Twilio", "ARCA", "APIs REST"] },
+    ],
+  },
   projects: {
     roleLabel: "Rol",
     title: "Proyectos destacados",
@@ -80,7 +93,9 @@ const es = {
         "Factura en ARCA (ex AFIP) con comprobantes A, B y C, y nota de cr\u00e9dito autom\u00e1tica al anular",
         "91 migraciones y m\u00e1s de 3.700 tests autom\u00e1ticos; datos aislados por negocio y sucursal",
       ],
+      live: "EN VIVO",
       slides: [
+        "Vista general: punto de venta, caja y portal del proveedor",
         "Punto de venta: cobro r\u00e1pido con escaneo y stock a la vista",
         "Caja: turno, gastos y corte en un solo lugar",
         "Inventario: stock, costos y m\u00e1rgenes por producto",
@@ -248,6 +263,19 @@ const en: Translations = {
     languages: "Languages",
     native: "Native",
   },
+  layers: {
+    title: "How I build",
+    intro: "A product is several layers working together. This is what I cover in each one.",
+    kicker: "Product layers",
+    tag: "How I build \u00b7 01",
+    active: "Active layer",
+    items: [
+      { name: "Interface", detail: "Structure, hierarchy and visual feedback: the part the user touches.", tags: ["Next.js", "React", "TypeScript", "Tailwind", "Accessibility"] },
+      { name: "Logic", detail: "Business rules, permissions and flows: what each role can do and how everything is calculated.", tags: ["Roles & permissions", "Business rules", "Automated tests"] },
+      { name: "Data", detail: "Multi-tenant with row-level security: each business only sees its own.", tags: ["Supabase", "PostgreSQL", "RLS", "Migrations"] },
+      { name: "Integrations", detail: "Payments, messaging and electronic invoicing connected to the product.", tags: ["MercadoPago", "Stripe", "Twilio", "ARCA", "REST APIs"] },
+    ],
+  },
   projects: {
     roleLabel: "Role",
     title: "Featured projects",
@@ -295,7 +323,9 @@ const en: Translations = {
         "Invoices through ARCA (ex AFIP) with A, B and C receipts, and automatic credit notes on cancellation",
         "91 migrations and 3,700+ automated tests; data isolated per business and branch",
       ],
+      live: "LIVE",
       slides: [
+        "Overview: point of sale, cash register and supplier portal",
         "Point of sale: fast checkout with scanning and live stock",
         "Cash register: shift, expenses and closing in one place",
         "Inventory: stock, costs and margins per product",

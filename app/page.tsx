@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { ProductLayers } from "@/components/sections/ProductLayers";
 import { Projects } from "@/components/sections/Projects";
 import { Stack } from "@/components/sections/Stack";
 import { Experience } from "@/components/sections/Experience";
@@ -37,6 +38,8 @@ export default function Home() {
         <Hero />
         <SectionDivider />
         <About />
+        <SectionDivider />
+        <ProductLayers />
         <SectionDivider />
         <Projects />
         <SectionDivider />

@@ -33,6 +33,7 @@ type ProjectData = {
     slides: { src: string; alt: string }[];
     prevLabel: string;
     nextLabel: string;
+    liveLabel: string;
   };
 };
 
@@ -71,12 +72,13 @@ export function Projects() {
       featured: {
         label: t.projects.misuper.featured,
         highlights: t.projects.misuper.highlights,
-        slides: ["pos", "caja", "inventario", "proveedor-pedidos", "proveedor-whatsapp"].map((name, i) => ({
+        slides: ["general", "pos", "caja", "inventario", "proveedor-pedidos", "proveedor-whatsapp"].map((name, i) => ({
           src: `/misuper/${name}.webp`,
           alt: t.projects.misuper.slides[i],
         })),
         prevLabel: t.projects.misuper.prev,
         nextLabel: t.projects.misuper.next,
+        liveLabel: t.projects.misuper.live,
       },
     },
     {
@@ -168,6 +170,7 @@ export function Projects() {
                       slides={project.featured.slides}
                       prevLabel={project.featured.prevLabel}
                       nextLabel={project.featured.nextLabel}
+                      liveLabel={project.featured.liveLabel}
                     />
                   </div>
                   <div className="flex flex-col lg:col-span-2">
